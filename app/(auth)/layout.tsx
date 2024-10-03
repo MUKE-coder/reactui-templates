@@ -7,8 +7,8 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
   const session = null;
   return (
     <div className="bg-white">
-      <SiteHeader session={session} />
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <SiteHeader />
+      <div className="relative isolate px-6 pt-20 lg:px-8">
         {children}
         <Footer />
       </div>

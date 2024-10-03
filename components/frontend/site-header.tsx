@@ -27,6 +27,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { FaPuzzlePiece } from "react-icons/fa";
+import { ModeToggle } from "../mode-toggle";
 
 const menuItems = [
   {
@@ -67,7 +68,7 @@ const menuItems = [
 
 export default function SiteHeader() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black text-white">
+    <header className="fixed top-0 left-0 right-0 z-50 dark:bg-black dark:text-white bg-white text-slate-700">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
           Framer
@@ -102,7 +103,7 @@ export default function SiteHeader() {
                               href="#"
                             >
                               <div className="flex items-center">
-                                <div className="bg-gray-800 p-2 rounded-md mr-3">
+                                <div className="bg-white dark:bg-gray-800 p-2 rounded-md mr-3 border ">
                                   <child.icon className="h-5 w-5" />
                                 </div>
                                 <div>
@@ -126,14 +127,24 @@ export default function SiteHeader() {
           </NavigationMenu>
         </nav>
         <div className="hidden lg:flex items-center space-x-4">
-          <Button variant="ghost">Login</Button>
-          <Button variant="outline">Sign up</Button>
+          <ModeToggle />
+          <Button className="" variant="outline" size="sm">
+            <Link href="/login">Login</Link>
+          </Button>
+          <Button size="sm">
+            <Link href="/register">Sign up</Link>
+          </Button>
         </div>
         <div className="flex lg:hidden items-center space-x-4">
-          <Button variant="ghost" size="sm">
+          <ModeToggle />
+          <Button
+            className="border border-orange-300"
+            variant="ghost"
+            size="sm"
+          >
             Login
           </Button>
-          <Button variant="outline" size="sm">
+          <Button className="bg-orange-400" variant="outline" size="sm">
             Sign up
           </Button>
           <Sheet>
@@ -189,7 +200,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-800 hover:text-white focus:bg-gray-800 focus:text-white",
+            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-slate-600 dark:hover:bg-gray-800 dark:hover:hover:text-white dark:focus:bg-gray-800 focus:text-white",
             className
           )}
           {...props}
