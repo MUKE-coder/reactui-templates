@@ -119,7 +119,7 @@ export type TemplateProps = {
   thumbnail: string; // URL or path to the thumbnail image
 };
 
-const templates: TemplateProps[] = [
+export const templates: TemplateProps[] = [
   {
     name: "Modern Agency Template",
     price: 49,
@@ -212,7 +212,7 @@ export default function Templates() {
               return (
                 <Link
                   key={i}
-                  href="#"
+                  href={`/web-templates/slug`}
                   className="rounded-xl overflow-hidden border"
                 >
                   <img src={item.thumbnail} alt="" />

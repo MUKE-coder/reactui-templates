@@ -31,7 +31,7 @@ import { ModeToggle } from "../mode-toggle";
 
 const menuItems = [
   {
-    title: "Features",
+    title: "Categories",
     href: "#",
     children: [
       {
@@ -44,7 +44,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Resources",
+    title: "Systems",
     href: "#",
     children: [
       { title: "Meetups", description: "Upcoming events", icon: MapPin },
@@ -53,7 +53,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Support",
+    title: "React Native",
     href: "#",
     children: [
       { title: "Updates", description: "Changelog", icon: FileText },
@@ -61,9 +61,9 @@ const menuItems = [
       { title: "Gallery", description: "Top sites", icon: Image },
     ],
   },
-  { title: "Enterprise", href: "#" },
+  // { title: "Enterprise", href: "#" },
   { title: "Pricing", href: "#" },
-  { title: "Contact", href: "#" },
+  // { title: "Contact", href: "#" },
 ];
 
 export default function SiteHeader() {
@@ -71,7 +71,7 @@ export default function SiteHeader() {
     <header className="fixed top-0 left-0 right-0 z-50 dark:bg-black dark:text-white bg-white text-slate-700">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
-          Framer
+          React UI
         </Link>
         <nav className="hidden lg:flex items-center space-x-4">
           <NavigationMenu>

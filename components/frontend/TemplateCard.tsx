@@ -11,7 +11,10 @@ export default function TemplateHorizontalCard({
 }) {
   // const price =data.price >0 ?
   return (
-    <Link href="#" className="bg-white p-6 rounded-lg  pb-6 border block">
+    <Link
+      href={`/web-templates/slug`}
+      className="bg-white p-6 rounded-lg  pb-6 border block"
+    >
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="lg:w-1/3 space-y-4">
           <h2 className="text-2xl font-bold text-gray-800">{data.name}</h2>
