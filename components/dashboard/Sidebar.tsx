@@ -27,40 +27,58 @@ import {
 } from "@/components/ui/card";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-export default function Sidebar() {
-  const sidebarLinks = [
-    {
-      title: "Dashboard",
-      href: "/dashboard",
-      icon: Home,
-    },
-    {
-      title: "Orders",
-      href: "/dashboard/orders",
-      icon: ShoppingCart,
-      count: 6,
-    },
-    {
-      title: "Templates",
-      href: "/dashboard/products",
-      icon: Package,
-    },
-    {
-      title: "Customers",
-      href: "/dashboard/customers",
-      icon: Users,
-    },
-    {
-      title: "Categories",
-      href: "/dashboard/categories",
-      icon: LayoutGrid,
-    },
-    {
-      title: "Analytics",
-      href: "/dashboard/analytics",
-      icon: LineChart,
-    },
-  ];
+import { UserRole } from "@prisma/client";
+import { Session } from "next-auth";
+
+// Sidebar links with role-based access
+const allLinks = [
+  {
+    title: "Dashboard",
+    href: "/dashboard",
+    icon: Home,
+    roles: ["ADMIN", "USER", "CUSTOMER"], // Accessible to all roles
+  },
+  {
+    title: "Orders",
+    href: "/dashboard/orders",
+    icon: ShoppingCart,
+    count: 6,
+    roles: ["ADMIN", "USER", "CUSTOMER"],
+  },
+  {
+    title: "Templates",
+    href: "/dashboard/products",
+    icon: Package,
+    roles: ["ADMIN", "USER", "CUSTOMER"],
+  },
+  {
+    title: "Customers",
+    href: "/dashboard/customers",
+    icon: Users,
+    roles: ["ADMIN", "USER", "CUSTOMER"],
+  },
+  {
+    title: "Categories",
+    href: "/dashboard/categories",
+    icon: LayoutGrid,
+    roles: ["ADMIN"],
+  },
+  {
+    title: "Analytics",
+    href: "/dashboard/analytics",
+    icon: LineChart,
+    roles: ["ADMIN", "USER", "CUSTOMER"],
+  },
+];
+
+// Function to filter the sidebar links based on user role
+const getFilteredSidebarLinks = (userRole: UserRole) => {
+  return allLinks.filter((link) => link.roles.includes(userRole));
+};
+export default function Sidebar({ session }: { session: Session }) {
+  const role = session.user.role;
+  const sidebarLinks = getFilteredSidebarLinks(role);
+
   const pathname = usePathname();
   return (
     <div className="hidden border-r bg-muted/40 md:block">

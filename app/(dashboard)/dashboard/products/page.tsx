@@ -2,11 +2,15 @@ import React from "react";
 import { columns } from "./columns";
 import DataTable from "@/components/DataTableComponents/DataTable";
 import TableHeader from "../../../../components/dashboard/Tables/TableHeader";
-import { getAllTemplates } from "@/actions/templates";
+import { getAllTemplates, getUserTemplates } from "@/actions/templates";
 import NoProduct from "@/components/dashboard/NoProductDisplay";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/config/auth";
 
 export default async function page() {
-  const templates = (await getAllTemplates()) || [];
+  const session = await getServerSession(authOptions);
+  const userId = session?.user.id;
+  const templates = (await getUserTemplates(userId)) || [];
   return (
     <>
       {templates.length > 0 ? (

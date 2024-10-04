@@ -40,6 +40,25 @@ export async function getAllTemplates() {
     return null;
   }
 }
+export async function getUserTemplates(userId: string | undefined) {
+  if (userId) {
+    try {
+      const templates = await db.template.findMany({
+        orderBy: {
+          createdAt: "asc",
+        },
+        where: {
+          userId,
+        },
+      });
+
+      return templates;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+}
 export async function updateTemplateById(
   id: string,
   data: CreateTemplateProps

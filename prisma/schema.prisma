@@ -44,7 +44,7 @@ model Session {
 enum UserRole {
   USER
   ADMIN
-  SERVICE_PROVIDER
+  CUSTOMER
 }
  
 model User {
