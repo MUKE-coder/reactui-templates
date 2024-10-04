@@ -12,6 +12,24 @@ export const ourFileRouter = {
       return { uploadedBy: "JB" };
     }
   ),
+  templateThumbnail: f({ image: { maxFileSize: "1MB" } }).onUploadComplete(
+    async ({ metadata, file }) => {
+      console.log("file url", file.url);
+      return { uploadedBy: "JB" };
+    }
+  ),
+  screenShots: f({
+    image: { maxFileSize: "1MB", maxFileCount: 3 },
+  }).onUploadComplete(async ({ metadata, file }) => {
+    console.log("file url", file.url);
+    return { uploadedBy: "JB" };
+  }),
+  templateZipFile: f({
+    "application/zip": { maxFileSize: "1MB" },
+  }).onUploadComplete(async ({ metadata, file }) => {
+    console.log("Uploaded ZIP file URL:", file.url);
+    return { uploadedBy: "JB", fileType: "zip" };
+  }),
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;

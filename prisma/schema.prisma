@@ -61,6 +61,7 @@ model User {
   status Boolean @default(true)
   accounts      Account[]
   sessions      Session[]
+  templates  Template[]
   isVerfied     Boolean   @default(false)
   token         Int?
   createdAt     DateTime  @default(now())
@@ -75,9 +76,40 @@ model Category {
   slug        String    @unique
   imageUrl    String?
   description String?
+  templates Template[] 
  
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 }
 
- 
+ model Template {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  slug          String   @unique
+  price         Float
+  screenShots   String[]
+  description   String?
+  thumbnail     String
+  zippedFileUrl  String?
+  zippedFileSize  Int?
+  zippedFileName  String?
+  pages         Int
+  previewLink   String
+  categoryName   String
+  userName   String
+  whatsIncluded String? @default("")
+  techStack     String?
+  documentation String?
+  changeLog     String?
+  views   Int? @default(0)
+  published     Boolean @default(true)
+  // Relations
+  categoryId    String   @db.ObjectId
+  category      Category @relation(fields: [categoryId], references: [id],onDelete: Cascade)
+  
+  userId        String   @db.ObjectId
+  user          User     @relation(fields: [userId], references: [id],onDelete: Cascade)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}

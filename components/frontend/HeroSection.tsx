@@ -3,6 +3,7 @@ import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Category } from "@prisma/client";
 export type CategoryProps = {
   title: string;
   slug: string;
@@ -13,11 +14,11 @@ export default function HeroSection({
   title,
   description,
   categories,
-  slug,
+  slug = "all",
 }: {
   title: string;
   description: string;
-  categories: CategoryProps[];
+  categories: Category[];
   slug?: string;
 }) {
   return (

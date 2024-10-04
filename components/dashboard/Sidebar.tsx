@@ -41,7 +41,7 @@ export default function Sidebar() {
       count: 6,
     },
     {
-      title: "Products",
+      title: "Templates",
       href: "/dashboard/products",
       icon: Package,
     },

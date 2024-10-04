@@ -24,10 +24,10 @@ export default function MultipleImageInput({
         <div className="grid gap-2">
           <Image
             alt={title}
-            className="h-40 w-full rounded-md object-cover"
-            height="300"
+            className="h-40 w-full rounded-md object-contain"
+            height="800"
             src={imageUrls[0]}
-            width="300"
+            width="800"
           />
           <div className="grid grid-cols-3 gap-2">
             {imageUrls.map((imageUrl: string, i: number) => {
@@ -35,10 +35,10 @@ export default function MultipleImageInput({
                 <div key={i}>
                   <Image
                     alt="Product image"
-                    className="aspect-square w-full rounded-md object-cover"
-                    height="84"
+                    className="aspect-square w-full rounded-md object-contain"
+                    height="800"
                     src={imageUrl}
-                    width="84"
+                    width="800"
                   />
                 </div>
               );

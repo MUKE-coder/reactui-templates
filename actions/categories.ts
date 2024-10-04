@@ -30,7 +30,7 @@ export async function getAllCategories() {
   try {
     const categories = await db.category.findMany({
       orderBy: {
-        createdAt: "desc",
+        createdAt: "asc",
       },
     });
 
@@ -73,7 +73,7 @@ export async function deleteCategory(id: string) {
         id,
       },
     });
-
+    revalidatePath("/dashboard/categories");
     return {
       ok: true,
       data: deletedCategory,

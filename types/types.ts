@@ -17,3 +17,25 @@ export type LoginProps = {
   email: string;
   password: string;
 };
+
+export type CreateTemplateProps = {
+  name: string;
+  slug: string;
+  userId: string;
+  userName: string;
+  categoryId: string;
+  categoryName: string;
+  price: number;
+  screenShots?: string[];
+  description?: string;
+  thumbnail: string;
+  pages: number;
+  previewLink: string;
+  whatsIncluded?: string;
+  zippedFileUrl?: string;
+  zippedFileSize?: number;
+  zippedFileName?: string;
+  techStack?: string;
+  documentation?: string;
+  changeLog?: string;
+};

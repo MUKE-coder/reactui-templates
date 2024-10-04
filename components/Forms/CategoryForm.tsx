@@ -22,7 +22,12 @@ import TextInput from "../FormInputs/TextInput";
 import TextArea from "../FormInputs/TextAreaInput";
 import ImageInput from "../FormInputs/ImageInput";
 import FormFooter from "./FormFooter";
-import { createCategory, updateCategoryById } from "@/actions/categories";
+import {
+  createBulkCategories,
+  createCategory,
+  updateCategoryById,
+} from "@/actions/categories";
+// import { templateCategories } from "@/app/(home)/page";
 
 export type SelectOptionProps = {
   label: string;
@@ -50,7 +55,8 @@ export default function CategoryForm({
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
-  const initialImage = initialData?.imageUrl || "/placeholder.svg";
+  const randomIndex = Math.floor(Math.random() * 4 + 1);
+  const initialImage = initialData?.imageUrl || `/icons/icon${randomIndex}.png`;
   const [imageUrl, setImageUrl] = useState(initialImage);
 
   async function saveCategory(data: CategoryProps) {
@@ -94,67 +100,92 @@ export default function CategoryForm({
   // console.log(error);
   // }
   // }
-  console.log(status);
-
+  // console.log(status);
+  // async function handleCreateBulk() {
+  //   setLoading(true);
+  //   try {
+  //     const categories: CategoryProps[] = templateCategories.map((item) => {
+  //       const randomIndex = Math.floor(Math.random() * 4 + 1);
+  //       const initialImage = `/icons/icon${randomIndex}.png`;
+  //       return {
+  //         title: item.title,
+  //         slug: generateSlug(item.title),
+  //         imageUrl: initialImage,
+  //         description: item.description,
+  //       };
+  //     });
+  //     const res = await createBulkCategories(categories);
+  //     toast.success("Categories created");
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error);
+  //   }
+  // }
   return (
-    <form className="" onSubmit={handleSubmit(saveCategory)}>
-      <FormHeader
-        href="/categories"
-        parent=""
-        title="Category"
-        editingId={editingId}
-        loading={loading}
-      />
+    <>
+      {/* <Button type="button" disabled={loading} onClick={handleCreateBulk}>
+        {loading ? "Creating..." : "Create Bulk Categories"}
+      </Button> */}
+      <form className="" onSubmit={handleSubmit(saveCategory)}>
+        <FormHeader
+          href="/categories"
+          parent=""
+          title="Category"
+          editingId={editingId}
+          loading={loading}
+        />
 
-      <div className="grid grid-cols-12 gap-6 py-8">
-        <div className="lg:col-span-8 col-span-full space-y-3">
-          <Card>
-            <CardHeader>
-              <CardTitle>Category Title</CardTitle>
-              <CardDescription>
-                Lipsum dolor sit amet, consectetur adipiscing elit
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6">
-                <div className="grid gap-3">
-                  <TextInput
-                    register={register}
-                    errors={errors}
-                    label="Category Title"
-                    name="title"
-                  />
+        <div className="grid grid-cols-12 gap-6 py-8">
+          <div className="lg:col-span-8 col-span-full space-y-3">
+            <Card>
+              <CardHeader>
+                <CardTitle>Category Title</CardTitle>
+                <CardDescription>
+                  Lipsum dolor sit amet, consectetur adipiscing elit
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6">
+                  <div className="grid gap-3">
+                    <TextInput
+                      register={register}
+                      errors={errors}
+                      label="Category Title"
+                      name="title"
+                    />
+                  </div>
+                  <div className="grid gap-3">
+                    <TextArea
+                      register={register}
+                      errors={errors}
+                      label="Description"
+                      name="description"
+                    />
+                  </div>
                 </div>
-                <div className="grid gap-3">
-                  <TextArea
-                    register={register}
-                    errors={errors}
-                    label="Description"
-                    name="description"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        <div className="lg:col-span-4 col-span-full ">
-          <div className="grid auto-rows-max items-start gap-4 ">
-            <ImageInput
-              title="Category Image"
-              imageUrl={imageUrl}
-              setImageUrl={setImageUrl}
-              endpoint="categoryImage"
-            />
+              </CardContent>
+            </Card>
+          </div>
+          <div className="lg:col-span-4 col-span-full ">
+            <div className="grid auto-rows-max items-start gap-4 ">
+              <ImageInput
+                title="Category Image"
+                imageUrl={imageUrl}
+                setImageUrl={setImageUrl}
+                endpoint="categoryImage"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <FormFooter
-        href="/categories"
-        editingId={editingId}
-        loading={loading}
-        title="Category"
-        parent=""
-      />
-    </form>
+        <FormFooter
+          href="/categories"
+          editingId={editingId}
+          loading={loading}
+          title="Category"
+          parent=""
+        />
+      </form>
+    </>
   );
 }

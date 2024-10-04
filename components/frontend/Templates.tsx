@@ -128,7 +128,7 @@ export const templates: TemplateProps[] = [
       "A sleek and modern template for digital agencies.A sleek and modern template for digital agencies.A sleek and modern template for digital agencies.A sleek and modern template for digital agencies.",
     authorName: "John Doe",
     categoryName: "Agency",
-    thumbnail: "/1.png",
+    thumbnail: "/1.jpg",
   },
   {
     name: "Minimal Blog Template",

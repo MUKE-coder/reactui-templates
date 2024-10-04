@@ -8,17 +8,26 @@ type ImageInputProps = {
   imageUrl: string;
   setImageUrl: any;
   endpoint: any;
+  helperText?: string;
 };
 export default function ImageInput({
   title,
   imageUrl,
   setImageUrl,
   endpoint,
+  helperText,
 }: ImageInputProps) {
   return (
     <Card className="overflow-hidden">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>
+          <p className="text-center">{title}</p>
+          {helperText && (
+            <p className="text-muted-foreground text-center font-normal text-xs mt-1 text-red-500">
+              {helperText}
+            </p>
+          )}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-2">

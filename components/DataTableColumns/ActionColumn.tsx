@@ -44,9 +44,9 @@ export default function ActionColumn({
       if (model === "category") {
         const res = await deleteCategory(id);
         if (res?.ok) {
-          window.location.reload();
+          // window.location.reload();
+          toast.success(`${model} Deleted Successfully`);
         }
-        toast.success(`${model} Deleted Successfully`);
       }
     } catch (error) {
       console.log(error);
