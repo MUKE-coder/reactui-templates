@@ -1,13 +1,18 @@
 import Footer from "@/components/frontend/site-footer";
 import SiteHeader from "@/components/frontend/site-header";
+import { authOptions } from "@/config/auth";
 import { getServerSession } from "next-auth";
 import React, { ReactNode } from "react";
 
-export default function HomeLayout({ children }: { children: ReactNode }) {
-  const session = null;
+export default async function HomeLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const session = await getServerSession(authOptions);
   return (
     <div className="bg-white">
-      <SiteHeader />
+      <SiteHeader session={session} />
       <div className="relative isolate px-6 pt-20 lg:px-8">
         {children}
         <Footer />
