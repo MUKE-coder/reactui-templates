@@ -12,6 +12,7 @@ export type UserProps = {
   image: string;
   email: string;
   password: string;
+  username: string;
 };
 export type LoginProps = {
   email: string;
@@ -23,6 +24,7 @@ export type CreateTemplateProps = {
   slug: string;
   userId: string;
   userName: string;
+  author: string;
   categoryId: string;
   categoryName: string;
   price: number;
@@ -36,6 +38,7 @@ export type CreateTemplateProps = {
   zippedFileSize?: number;
   zippedFileName?: string;
   techStack?: string;
+  isPaid: boolean;
   documentation?: string;
   changeLog?: string;
 };

@@ -22,7 +22,7 @@ export default function TemplateList({
           return (
             <Link
               key={i}
-              href={`/web-templates/slug`}
+              href={`/web-templates/${item.slug}`}
               className="rounded-xl overflow-hidden border"
             >
               <img src={item.thumbnail} alt="" />
@@ -30,7 +30,7 @@ export default function TemplateList({
                 <h2 className="py-1.5 font-semibold">{item.name}</h2>
                 <div className="flex items-center justify-between">
                   <Badge className="py-1.5 px-4">{price}</Badge>
-                  <p>{item.authorName}</p>
+                  <p>{item.userName}</p>
                 </div>
               </div>
             </Link>

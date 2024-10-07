@@ -39,13 +39,6 @@ const allLinks = [
     roles: ["ADMIN", "USER", "CUSTOMER"], // Accessible to all roles
   },
   {
-    title: "Orders",
-    href: "/dashboard/orders",
-    icon: ShoppingCart,
-    count: 6,
-    roles: ["ADMIN", "USER", "CUSTOMER"],
-  },
-  {
     title: "Templates",
     href: "/dashboard/products",
     icon: Package,
@@ -64,8 +57,8 @@ const allLinks = [
     roles: ["ADMIN"],
   },
   {
-    title: "Analytics",
-    href: "/dashboard/analytics",
+    title: "Settings",
+    href: "/dashboard/settings",
     icon: LineChart,
     roles: ["ADMIN", "USER", "CUSTOMER"],
   },
@@ -86,7 +79,7 @@ export default function Sidebar({ session }: { session: Session }) {
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold">
             <Package2 className="h-6 w-6" />
-            <span className="">Acme Inc</span>
+            <span className="">React UI</span>
           </Link>
           <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
             <Bell className="h-4 w-4" />
@@ -109,11 +102,11 @@ export default function Sidebar({ session }: { session: Session }) {
                 >
                   <Icon className="h-4 w-4" />
                   {item.title}
-                  {item.count && (
+                  {/* {item.count && (
                     <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                       {item.count}
                     </Badge>
-                  )}
+                  )} */}
                 </Link>
               );
             })}

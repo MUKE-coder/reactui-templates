@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Twitter } from "lucide-react";
 import TemplateList from "./TemplateList";
-import { templates } from "./Templates";
+import { TemplateProps } from "./Templates";
 
 interface Template {
   name: string;
@@ -48,7 +48,11 @@ const sampleData: ProfileProps = {
   ],
 };
 
-const AuthorTemplates: React.FC = () => {
+export default function AuthorTemplates({
+  templates,
+}: {
+  templates: TemplateProps[];
+}) {
   const { name, description, avatarUrl, twitterHandle, templateCount } =
     sampleData;
 
@@ -84,6 +88,4 @@ const AuthorTemplates: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default AuthorTemplates;
+}

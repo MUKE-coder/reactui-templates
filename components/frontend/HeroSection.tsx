@@ -37,18 +37,30 @@ export default function HeroSection({
             {description}
           </p>
           <div className="flex flex-wrap justify-center gap-2 mt-8">
-            {categories.map((item) => (
-              <Badge
-                key={item.slug}
-                variant="secondary"
-                className={cn(
-                  "py-1.5 px-4 text-sm font-medium bg-white/10 hover:bg-white/20 dark:bg-slate-800/50 dark:hover:bg-slate-800/70 transition-colors duration-200",
-                  slug === item.slug && "bg-white hover:bg-slate-50"
-                )}
-              >
-                <Link href={`/category/${item.slug}`}>{item.title}</Link>
-              </Badge>
-            ))}
+            {categories.map((item) => {
+              let href = "";
+              if (item.slug === "all") {
+                href = "/";
+              } else if (item.slug == "free") {
+                href = "/?query=free";
+              } else if (item.slug === "new") {
+                href = "/?query=new";
+              } else {
+                href = `/category/${item.slug}`;
+              }
+              return (
+                <Badge
+                  key={item.slug}
+                  variant="secondary"
+                  className={cn(
+                    "py-1.5 px-4 text-sm font-medium bg-white/10 hover:bg-white/20 dark:bg-slate-800/50 dark:hover:bg-slate-800/70 transition-colors duration-200",
+                    slug === item.slug && "bg-white hover:bg-slate-50"
+                  )}
+                >
+                  <Link href={href}>{item.title}</Link>
+                </Badge>
+              );
+            })}
           </div>
         </div>
       </div>

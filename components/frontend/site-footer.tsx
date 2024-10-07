@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="relative bg-gradient-to-br from-green-400 to-blue-500 text-white overflow-hidden">
       <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=200')] bg-repeat opacity-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">About Us</h3>
             <ul className="space-y-2">
@@ -110,19 +110,19 @@ export default function SiteFooter() {
               <Link href="/join/doctors">Become a Doctor</Link>
             </Button>
           </div>
-        </div>
+        </div> */}
         <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} AskDoc. All rights reserved.
+            &copy; {new Date().getFullYear()} React UI. All rights reserved.
           </p>
           <div className="flex space-x-4 text-sm">
             <Link href="/privacy" className="hover:underline">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:underline">
+            <Link href="#" className="hover:underline">
               Terms of Service
             </Link>
-            <Link href="/accessibility" className="hover:underline">
+            <Link href="#" className="hover:underline">
               Accessibility
             </Link>
           </div>

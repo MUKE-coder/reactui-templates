@@ -12,7 +12,7 @@ export default async function HomeLayout({
   const session = await getServerSession(authOptions);
   return (
     <div className="bg-background">
-      <SiteHeader />
+      <SiteHeader session={session} />
       <div className="relative isolate ">
         {/* <div
           aria-hidden="true"

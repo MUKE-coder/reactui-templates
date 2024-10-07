@@ -323,6 +323,7 @@ export default function About() {
     .find((item) => item.value === initialCategoryId);
   const [selectedCategory, setSelectedCategory] =
     useState<any>(initialCategory);
+  const defaultImages = ["/1.png", "/2.png", "/3.png"];
   async function saveCategory(data: CreateTemplateProps) {
     try {
       setLoading(true);
@@ -333,11 +334,16 @@ export default function About() {
       data.categoryName = selectedCategory.label;
       data.userId = session?.user.id;
       data.userName = session?.user.firstName;
+      data.author = session?.user.email.split("@")[0];
       data.price = Number(data.price);
       data.whatsIncluded = defaultWhatsIncluded;
       data.techStack = defaultTechStack;
       data.changeLog = defaultChangeLog;
       data.documentation = defaultDocumentation;
+      data.screenShots = defaultImages;
+      const price = Number(data.price);
+      data.isPaid = price === 0 ? false : true;
+      console.log(price);
       if (editingId) {
         // await updateCategoryById(editingId, data);
         setLoading(false);
@@ -350,6 +356,11 @@ export default function About() {
         setImageUrl("/placeholder.svg");
       } else {
         const res = await createTemplate(data);
+        if (res?.status === 409) {
+          setLoading(false);
+          toast.error(res.error);
+          return;
+        }
         setLoading(false);
         // Toast
         toast.success("Successfully Created!");
@@ -357,7 +368,7 @@ export default function About() {
         reset();
         // setImageUrl("/placeholder.svg");
         //route
-        router.push(`/dashboard/products/update/${res?.id}`);
+        router.push(`/dashboard/products/update/${res?.data?.id}`);
       }
     } catch (error) {
       setLoading(false);
@@ -452,6 +463,12 @@ export default function About() {
                       setOption={setSelectedCategory}
                       toolTipText="Add New Category"
                       href="/dashboard/categories/new"
+                    />
+                    <TextArea
+                      register={register}
+                      errors={errors}
+                      label="Template Description"
+                      name="description"
                     />
                   </div>
                 </div>

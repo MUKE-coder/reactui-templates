@@ -54,6 +54,9 @@ model User {
   lastName          String
   phone          String
   email         String   @unique
+  username      String?
+  twitter      String?
+  tagline      String?
   emailVerified DateTime?
   image         String?
   role          UserRole  @default(USER)
@@ -81,6 +84,15 @@ model Category {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 }
+model Customer {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  email         String @unique
+  productIds     String[]
+  authorIds      String[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
 
  model Template {
   id            String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -97,12 +109,14 @@ model Category {
   previewLink   String
   categoryName   String
   userName   String
+  author   String?
   whatsIncluded String? @default("")
   techStack     String?
   documentation String?
   changeLog     String?
   views   Int? @default(0)
   published     Boolean @default(true)
+  isPaid     Boolean @default(true)
   // Relations
   categoryId    String   @db.ObjectId
   category      Category @relation(fields: [categoryId], references: [id],onDelete: Cascade)

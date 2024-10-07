@@ -30,6 +30,7 @@ export default function RegisterForm() {
     data.name = `${data.firstName} ${data.lastName}`;
     data.image =
       "https://utfs.io/f/59b606d1-9148-4f50-ae1c-e9d02322e834-2558r.png";
+    data.username = data.email.split("@")[0];
     try {
       const res = await createUser(data);
       if (res.status === 409) {

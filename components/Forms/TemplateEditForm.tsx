@@ -34,6 +34,7 @@ import { createTemplate, updateTemplateById } from "@/actions/templates";
 import dynamic from "next/dynamic";
 import ZippedFileInput, { FileProps } from "../FormInputs/ZippedFileInput";
 import MultipleImageInput from "../FormInputs/MultipleImageInput";
+import TextArea from "../FormInputs/TextAreaInput";
 // import QuillEditor from "../FormInputs/QuilEditor";
 // import { templateCategories } from "@/app/(home)/page";
 const QuillEditor = dynamic(
@@ -99,6 +100,7 @@ export default function TemplateEditForm({
     "/2.png",
     "/3.png",
   ];
+  console.log(defaultImages);
   const [imageUrls, setImageUrls] = useState(defaultImages);
   const initialCategoryId = initialData?.categoryId;
   const initialCategory = categories
@@ -121,7 +123,10 @@ export default function TemplateEditForm({
       data.categoryName = selectedCategory.label;
       data.userId = session?.user.id;
       data.userName = session?.user.firstName;
+      data.author = session?.user.email.split("@")[0];
       data.price = Number(data.price);
+      const price = Number(data.price);
+      data.isPaid = price === 0 ? false : true;
       if (editingId) {
         await updateTemplateById(editingId, data);
         setLoading(false);
@@ -173,13 +178,15 @@ export default function TemplateEditForm({
   // }
   let updateData: CreateTemplateProps = {
     name: initialData?.name ?? "",
+    isPaid: initialData?.isPaid ?? initialData?.price === 0 ? false : true,
     slug: initialData?.slug ?? "",
     userId: initialData?.userId ?? "",
     userName: initialData?.userName ?? "",
+    author: session?.user.email.split("@")[0],
     categoryId: initialData?.categoryId ?? "",
     categoryName: initialData?.categoryName ?? "",
     price: initialData?.price ?? 0,
-    screenShots: initialData?.screenShots ?? [""],
+    screenShots: initialData?.screenShots ?? ["/1.png", "/2.png", "/3.png"],
     description: initialData?.description ?? "",
     thumbnail: initialData?.thumbnail ?? "",
     pages: initialData?.pages ?? 0,
@@ -366,6 +373,12 @@ export default function TemplateEditForm({
                           setOption={setSelectedCategory}
                           toolTipText="Add New Category"
                           href="/dashboard/categories/new"
+                        />
+                        <TextArea
+                          register={register}
+                          errors={errors}
+                          label="Template Description"
+                          name="description"
                         />
                       </div>
                     </div>

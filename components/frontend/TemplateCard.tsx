@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TemplateProps } from "./Templates";
+import { updateTemplateViews } from "@/actions/templates";
 
 export default function TemplateHorizontalCard({
   data,
@@ -10,9 +11,17 @@ export default function TemplateHorizontalCard({
   data: TemplateProps;
 }) {
   // const price =data.price >0 ?
+  async function handleUpdateViews(id: string) {
+    try {
+      await updateTemplateViews(id);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <Link
-      href={`/web-templates/slug`}
+      onClick={() => handleUpdateViews(data.id)}
+      href={`/web-templates/${data.slug}`}
       className="bg-white p-6 rounded-lg  pb-6 border block"
     >
       <div className="flex flex-col lg:flex-row gap-6">

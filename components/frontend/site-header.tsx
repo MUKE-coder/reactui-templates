@@ -28,6 +28,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { FaPuzzlePiece } from "react-icons/fa";
 import { ModeToggle } from "../mode-toggle";
+import { Session } from "next-auth";
+import AuthenticatedAvatar from "../AuthenticatedAvatar";
 
 const menuItems = [
   {
@@ -66,17 +68,17 @@ const menuItems = [
   // { title: "Contact", href: "#" },
 ];
 
-export default function SiteHeader() {
+export default function SiteHeader({ session }: { session: Session | null }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 dark:bg-black dark:text-white bg-white text-slate-700">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold flex flex-col">
           <span>React UI</span>
           <span className="text-muted-foreground -mt-1 text-xs tracking-widest">
             Templates
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center space-x-4">
+        {/* <nav className="hidden lg:flex items-center space-x-4">
           <NavigationMenu>
             <NavigationMenuList>
               {menuItems.map((item) => (
@@ -128,28 +130,36 @@ export default function SiteHeader() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-        </nav>
+        </nav> */}
         <div className="hidden lg:flex items-center space-x-4">
           <ModeToggle />
-          <Button className="" variant="outline" size="sm">
-            <Link href="/login">Login</Link>
-          </Button>
-          <Button size="sm">
-            <Link href="/register">Sign up</Link>
-          </Button>
+          {session ? (
+            <AuthenticatedAvatar session={session} />
+          ) : (
+            <>
+              <Button className="" variant="outline" size="sm">
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button size="sm">
+                <Link href="/register">Sign up</Link>
+              </Button>
+            </>
+          )}
         </div>
         <div className="flex lg:hidden items-center space-x-4">
           <ModeToggle />
-          <Button
-            className="border border-orange-300"
-            variant="ghost"
-            size="sm"
-          >
-            Login
-          </Button>
-          <Button className="bg-orange-400" variant="outline" size="sm">
-            Sign up
-          </Button>
+          {session ? (
+            <AuthenticatedAvatar session={session} />
+          ) : (
+            <>
+              <Button className="" variant="outline" size="sm">
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button size="sm">
+                <Link href="/register">Sign up</Link>
+              </Button>
+            </>
+          )}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="ml-2">

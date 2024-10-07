@@ -1,4 +1,5 @@
 import { getAllCategories } from "@/actions/categories";
+import { getFrontendTemplates } from "@/actions/templates";
 import HeroSection, { CategoryProps } from "@/components/frontend/HeroSection";
 import Templates from "@/components/frontend/Templates";
 // export const templateCategories: CategoryProps[] = [
@@ -188,8 +189,14 @@ import Templates from "@/components/frontend/Templates";
 //       "Templates designed for Web3, blockchain, and crypto projects.",
 //   },
 // ];
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const { query = "all" } = searchParams;
   const categories = (await getAllCategories()) || [];
+  const templates = (await getFrontendTemplates(query as string)) || [];
   return (
     <main className="min-h-screen">
       <HeroSection
@@ -201,7 +208,7 @@ export default async function Home() {
       />
 
       <div className="">
-        <Templates />
+        <Templates templates={templates} />
         {/* <Showcase /> */}
       </div>
     </main>

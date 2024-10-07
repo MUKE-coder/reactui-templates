@@ -96,6 +96,7 @@ export default withUt({
     require("tailwindcss-animate"),
     addVariablesForColors,
     require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
   ],
 });
 
