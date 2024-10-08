@@ -7,13 +7,13 @@ export default function TitleColumn({ template }: { template: Template }) {
   return (
     <div className="flex flex-col">
       <Link
-        className="font-s text-xl"
+        className="font-s text-xl hover:underline"
         href={`/dashboard/products/update/${template.id}`}
       >
         {template.name}
       </Link>
       <Link
-        className="text-sm text-muted-foreground mt-2"
+        className="text-sm text-muted-foreground mt-2 hover:underline"
         href={`${baseUrl}/web-templates/${template.slug}`}
       >{`${baseUrl}/web-templates/${template.slug}`}</Link>
     </div>
