@@ -197,6 +197,7 @@ export default async function Home({
   const { query = "all" } = searchParams;
   const categories = (await getAllCategories()) || [];
   const templates = (await getFrontendTemplates(query as string)) || [];
+  // const filteredTemplates =templates.filter((tem)=>tem.)
   return (
     <main className="min-h-screen">
       <HeroSection

@@ -41,4 +41,5 @@ export type CreateTemplateProps = {
   isPaid: boolean;
   documentation?: string;
   changeLog?: string;
+  status?: boolean;
 };

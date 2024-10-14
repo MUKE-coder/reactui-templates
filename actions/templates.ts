@@ -54,10 +54,12 @@ export async function getFrontendTemplates(query: string) {
   if (query === "free") {
     where = {
       isPaid: false,
+      status: true,
     };
   } else if (query === "paid") {
     where = {
       isPaid: true,
+      status: true,
     };
   }
   try {

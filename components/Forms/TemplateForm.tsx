@@ -335,7 +335,8 @@ export default function About() {
       data.userId = session?.user.id;
       data.userName = session?.user.firstName;
       data.author = session?.user.email.split("@")[0];
-      data.price = Number(data.price);
+      // data.price = Number(data.price);
+      data.price = 0;
       data.whatsIncluded = defaultWhatsIncluded;
       data.techStack = defaultTechStack;
       data.changeLog = defaultChangeLog;

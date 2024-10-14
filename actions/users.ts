@@ -52,6 +52,31 @@ export async function createUser(data: UserProps) {
   }
 }
 
+export type UserPageProps = {
+  name: string;
+  twitter: string | null;
+  tagline: string | null;
+  image: string | null;
+};
+export default async function getUserByUsername(username: string) {
+  try {
+    const user = await db.user.findFirst({
+      where: {
+        username,
+      },
+      select: {
+        name: true,
+        twitter: true,
+        tagline: true,
+        image: true,
+      },
+    });
+    return user as UserPageProps;
+  } catch (error) {
+    console.error("Error fetching the count:", error);
+    return 0;
+  }
+}
 export async function getKitUsers() {
   const endpoint = process.env.KIT_API_ENDPOINT as string;
   try {

@@ -1,5 +1,7 @@
 import { getAuthorTemplatesByUsername } from "@/actions/templates";
+import getUserByUsername from "@/actions/users";
 import AuthorTemplates from "@/components/frontend/AuthorTemplates";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export default async function page({
@@ -8,9 +10,13 @@ export default async function page({
   params: { username: string };
 }) {
   const templates = (await getAuthorTemplatesByUsername(username)) || [];
+  const author = await getUserByUsername(username);
+  if (!author) {
+    return notFound();
+  }
   return (
     <div className="mt-16 p-8">
-      <AuthorTemplates templates={templates} />
+      <AuthorTemplates author={author} templates={templates} />
     </div>
   );
 }

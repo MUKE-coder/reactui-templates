@@ -117,6 +117,7 @@ model Customer {
   views   Int? @default(0)
   published     Boolean @default(true)
   isPaid     Boolean @default(true)
+  status     Boolean @default(false)
   // Relations
   categoryId    String   @db.ObjectId
   category      Category @relation(fields: [categoryId], references: [id],onDelete: Cascade)

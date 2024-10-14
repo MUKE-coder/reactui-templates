@@ -5,6 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Twitter } from "lucide-react";
 import TemplateList from "./TemplateList";
 import { TemplateProps } from "./Templates";
+import { UserPageProps } from "@/actions/users";
 
 interface Template {
   name: string;
@@ -50,18 +51,19 @@ const sampleData: ProfileProps = {
 
 export default function AuthorTemplates({
   templates,
+  author,
 }: {
   templates: TemplateProps[];
+  author: UserPageProps;
 }) {
-  const { name, description, avatarUrl, twitterHandle, templateCount } =
-    sampleData;
+  const { name, tagline, image, twitter } = author;
 
   return (
     <div className="bg-background min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
           <Avatar className="h-16 w-16 mr-4">
-            <AvatarImage src={avatarUrl} alt={name} />
+            <AvatarImage src={image ?? ""} alt={name} />
             <AvatarFallback>
               {name
                 .split(" ")
@@ -71,11 +73,13 @@ export default function AuthorTemplates({
           </Avatar>
           <div>
             <h1 className="text-2xl font-bold">{name}</h1>
-            <p className="text-gray-400">{description}</p>
-            <div className="flex items-center mt-2">
-              <Twitter size={16} className="mr-2" />
-              <span className="text-blue-400">@{twitterHandle}</span>
-            </div>
+            {tagline && <p className="text-gray-400">{tagline}</p>}
+            {twitter && (
+              <div className="flex items-center mt-2">
+                <Twitter size={16} className="mr-2" />
+                <span className="text-blue-400">@{twitter}</span>
+              </div>
+            )}
           </div>
         </div>
 

@@ -124,7 +124,8 @@ export default function TemplateEditForm({
       data.userId = session?.user.id;
       data.userName = session?.user.firstName;
       data.author = session?.user.email.split("@")[0];
-      data.price = Number(data.price);
+      // data.price = Number(data.price);
+      data.price = 0;
       const price = Number(data.price);
       data.isPaid = price === 0 ? false : true;
       if (editingId) {
@@ -178,14 +179,17 @@ export default function TemplateEditForm({
   // }
   let updateData: CreateTemplateProps = {
     name: initialData?.name ?? "",
-    isPaid: initialData?.isPaid ?? initialData?.price === 0 ? false : true,
+    // isPaid: initialData?.isPaid ?? initialData?.price === 0 ? false : true,
+    isPaid: false,
+    status: initialData?.status,
     slug: initialData?.slug ?? "",
     userId: initialData?.userId ?? "",
     userName: initialData?.userName ?? "",
     author: session?.user.email.split("@")[0],
     categoryId: initialData?.categoryId ?? "",
     categoryName: initialData?.categoryName ?? "",
-    price: initialData?.price ?? 0,
+    // price: initialData?.price ?? 0,
+    price: 0,
     screenShots: initialData?.screenShots ?? ["/1.png", "/2.png", "/3.png"],
     description: initialData?.description ?? "",
     thumbnail: initialData?.thumbnail ?? "",
@@ -272,6 +276,7 @@ export default function TemplateEditForm({
     updateData.zippedFileName = file?.title;
     updateData.zippedFileSize = file?.size;
     updateData.zippedFileUrl = file?.url;
+    updateData.status = true;
     try {
       if (!editingId) {
         toast.error("No editing id");
