@@ -18,7 +18,10 @@ import { Badge } from "../ui/badge";
 import { LayoutGrid } from "lucide-react";
 import TemplateHorizontalCard from "./TemplateCard";
 import TemplateFilters from "./TemplateFilters";
-import { updateTemplateViews } from "@/actions/templates";
+import {
+  updateTemplateDownloads,
+  updateTemplateViews,
+} from "@/actions/templates";
 export type TemplateProps = {
   id: string;
   slug: string;
@@ -43,6 +46,7 @@ export default function Templates({
       console.log(error);
     }
   }
+
   return (
     <div className="bg-background py-8">
       {templates.length > 0 ? (

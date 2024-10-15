@@ -87,7 +87,7 @@ model Category {
 model Customer {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name          String
-  email         String @unique
+  email         String 
   productIds     String[]
   authorIds      String[]
   createdAt DateTime  @default(now())
@@ -115,6 +115,7 @@ model Customer {
   documentation String?
   changeLog     String?
   views   Int? @default(0)
+  downloads   Int? @default(0)
   published     Boolean @default(true)
   isPaid     Boolean @default(true)
   status     Boolean @default(false)

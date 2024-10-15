@@ -143,6 +143,25 @@ export async function updateTemplateViews(id: string) {
     console.log(error);
   }
 }
+export async function updateTemplateDownloads(id: string) {
+  try {
+    const updatedTemp = await db.template.update({
+      where: {
+        id,
+      },
+      data: {
+        downloads: {
+          increment: 1,
+        },
+      },
+    });
+    revalidatePath("/dashboard/products");
+    revalidatePath("/dashboard/web-template/");
+    return updatedTemp;
+  } catch (error) {
+    console.log(error);
+  }
+}
 export async function getCaTemplateById(id: string) {
   try {
     const template = await db.template.findUnique({

@@ -37,6 +37,7 @@ import { TemplateProps } from "./Templates";
 import { Session } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
 import { createCustomer } from "@/actions/customers";
+import { updateTemplateDownloads } from "@/actions/templates";
 export default function TemplateDetailPage({
   template,
   authorTemplates,
@@ -95,12 +96,13 @@ export default function TemplateDetailPage({
   const pathname = usePathname();
   // console.log(pathname);
   const router = useRouter();
-  async function handleDownload() {
+  async function handleDownload(id: string) {
     console.log("Download clicked");
     if (!session) {
       router.push(`/login?returnUrl=${pathname}`);
       return;
     }
+
     const user = session.user;
     const data = {
       email: user.email,
@@ -110,6 +112,7 @@ export default function TemplateDetailPage({
     };
     // Create the Customer
     try {
+      await updateTemplateDownloads(id);
       await createCustomer(data);
     } catch (error) {
       console.log(error);
@@ -152,7 +155,7 @@ export default function TemplateDetailPage({
                     className="bg-gray-900 text-white hover:bg-gray-800"
                   >
                     <Link
-                      onClick={handleDownload}
+                      onClick={() => handleDownload(template.id)}
                       target="_blank"
                       href={template.zippedFileUrl ?? "#"}
                     >
@@ -162,7 +165,7 @@ export default function TemplateDetailPage({
                   </Button>
                 ) : (
                   <Button
-                    onClick={handleDownload}
+                    onClick={() => handleDownload(template.id)}
                     variant="default"
                     className="bg-gray-900 text-white hover:bg-gray-800"
                   >

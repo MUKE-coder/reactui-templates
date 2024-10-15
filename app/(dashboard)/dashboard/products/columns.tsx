@@ -57,7 +57,15 @@ export const columns: ColumnDef<Template>[] = [
     header: "Views",
     cell: ({ row }) => {
       const template = row.original;
-      return <p className="font-semibold">{template.views}</p>;
+      return <p className="font-semibold">{template.views ?? 0}</p>;
+    },
+  },
+  {
+    accessorKey: "downloads",
+    header: "Downloads",
+    cell: ({ row }) => {
+      const template = row.original;
+      return <p className="font-semibold">{template.downloads ?? 0}</p>;
     },
   },
   {
