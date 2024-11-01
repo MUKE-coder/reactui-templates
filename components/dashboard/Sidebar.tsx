@@ -57,6 +57,12 @@ const allLinks = [
     roles: ["ADMIN"],
   },
   {
+    title: "Components",
+    href: "/dashboard/site-components",
+    icon: LayoutGrid,
+    roles: ["ADMIN"],
+  },
+  {
     title: "Settings",
     href: "/dashboard/settings",
     icon: LineChart,

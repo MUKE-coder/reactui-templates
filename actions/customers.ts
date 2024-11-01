@@ -1,11 +1,7 @@
 "use server";
 
-import axios from "axios";
 import { db } from "@/prisma/db";
-import { UserProps } from "@/types/types";
-import bcrypt from "bcrypt";
-import { revalidatePath } from "next/cache";
-import { CustomerData } from "@/components/CustomerListing";
+
 type CustomerProps = {
   name: string;
   email: string;
@@ -15,7 +11,7 @@ type CustomerProps = {
 export async function createCustomer(data: CustomerProps) {
   const { email, name, productIds, authorIds } = data;
   try {
-    const existingCustomer = await db.customer.findUnique({
+    const existingCustomer = await db.customer.findFirst({
       where: {
         email,
       },

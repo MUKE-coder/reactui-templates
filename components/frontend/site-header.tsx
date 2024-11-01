@@ -78,6 +78,9 @@ export default function SiteHeader({ session }: { session: Session | null }) {
             Templates
           </span>
         </Link>
+        <nav>
+          <Link href="/simple-ui">UI Components</Link>
+        </nav>
         {/* <nav className="hidden lg:flex items-center space-x-4">
           <NavigationMenu>
             <NavigationMenuList>
