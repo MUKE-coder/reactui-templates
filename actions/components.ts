@@ -16,7 +16,7 @@ export async function createSiteComponent(name: string) {
     console.log(error);
   }
 }
-export async function updateSiteComponentViews(id: string) {
+export async function updateSiteComponentViews(id: string, route: string) {
   if (id) {
     try {
       const updated = await db.siteComponents.update({
@@ -29,7 +29,7 @@ export async function updateSiteComponentViews(id: string) {
           },
         },
       });
-      revalidatePath("/simple-ui/");
+      revalidatePath(`/simple-ui/${route}`);
       return updated;
     } catch (error) {
       console.log(error);

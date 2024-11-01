@@ -18,6 +18,7 @@ interface ComponentPreviewProps {
   isResponsive?: boolean;
   githubUrl?: string;
   externalUrl?: string;
+  route: string;
   downloads?: number;
 }
 
@@ -30,6 +31,7 @@ export default function ComponentPreview({
   githubUrl = "#",
   externalUrl = "#",
   downloads,
+  route,
 }: ComponentPreviewProps) {
   const [copied, setCopied] = useState(false);
 
@@ -37,7 +39,11 @@ export default function ComponentPreview({
     navigator.clipboard.writeText(sourceCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-    await updateSiteComponentViews(id ?? "");
+    try {
+      await updateSiteComponentViews(id ?? "", route);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
