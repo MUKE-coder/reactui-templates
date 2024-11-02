@@ -1,7 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Navigation, Sidebar, LayoutGrid } from "lucide-react";
+import { Navigation, Sidebar, LayoutGrid, MonitorPlay } from "lucide-react";
 
 // Example data structure
 const categories = [
@@ -16,15 +15,9 @@ const categories = [
       },
       {
         name: "Sidebars",
-        count: 3,
+        count: 5,
         icon: Sidebar,
         href: "/simple-ui/sidebars",
-      },
-      {
-        name: "Tabs",
-        count: 7,
-        icon: LayoutGrid,
-        href: "/components/tabs",
       },
     ],
   },
@@ -34,21 +27,15 @@ const categories = [
       {
         name: "Carousels",
         count: 5,
-        icon: Navigation,
+        icon: MonitorPlay,
         href: "/simple-ui/carousels",
       },
-      {
-        name: "Sidebars",
-        count: 3,
-        icon: Sidebar,
-        href: "/simple-ui/sidebars",
-      },
-      {
-        name: "Tabs",
-        count: 7,
-        icon: LayoutGrid,
-        href: "/components/tabs",
-      },
+      // {
+      //   name: "Tabs",
+      //   count: 7,
+      //   icon: LayoutGrid,
+      //   href: "/components/tabs",
+      // },
     ],
   },
 ];
