@@ -20,6 +20,12 @@ export const columns: ColumnDef<SiteComponents>[] = [
     accessorKey: "name",
     header: ({ column }) => <SortableColumn column={column} title="Name" />,
   },
+  {
+    accessorKey: "downloads",
+    header: ({ column }) => (
+      <SortableColumn column={column} title="Downloads" />
+    ),
+  },
 
   {
     accessorKey: "createdAt",

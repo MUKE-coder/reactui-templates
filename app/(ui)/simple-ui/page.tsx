@@ -10,15 +10,38 @@ const categories = [
     items: [
       {
         name: "Navbars",
-        count: 9,
+        count: 3,
         icon: Navigation,
         href: "/simple-ui/site-headers",
       },
       {
         name: "Sidebars",
-        count: 5,
+        count: 3,
         icon: Sidebar,
-        href: "/components/sidebars",
+        href: "/simple-ui/sidebars",
+      },
+      {
+        name: "Tabs",
+        count: 7,
+        icon: LayoutGrid,
+        href: "/components/tabs",
+      },
+    ],
+  },
+  {
+    name: "Application UI",
+    items: [
+      {
+        name: "Carousels",
+        count: 3,
+        icon: Navigation,
+        href: "/simple-ui/carousels",
+      },
+      {
+        name: "Sidebars",
+        count: 3,
+        icon: Sidebar,
+        href: "/simple-ui/sidebars",
       },
       {
         name: "Tabs",
