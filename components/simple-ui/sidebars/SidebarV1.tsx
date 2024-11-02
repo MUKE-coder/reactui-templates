@@ -521,7 +521,7 @@ export default function SidebarV1() {
               {analytics.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <Card>
+                  <Card key={i}>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                       <CardTitle className="text-sm font-medium">
                         {item.title}
