@@ -69,7 +69,7 @@ export default async function Headers() {
   ];
   return (
     <div className="max-w-7xl mx-auto mt-16 p-8 rounded-lg ">
-      <h1 className="text-3xl font-bold mb-6">Sidebars({sidebars.length})</h1>
+      <h1 className="text-3xl font-bold mb-6">Carousels({sidebars.length})</h1>
       <div className="space-y-12">
         {sidebars.map((header, index) => {
           const sourceCode = extractComponentSource(header.sourcePath);

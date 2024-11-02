@@ -33,7 +33,7 @@ const categories = [
     items: [
       {
         name: "Carousels",
-        count: 3,
+        count: 5,
         icon: Navigation,
         href: "/simple-ui/carousels",
       },
