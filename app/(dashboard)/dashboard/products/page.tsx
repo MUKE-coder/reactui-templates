@@ -2,7 +2,7 @@ import React from "react";
 import { columns } from "./columns";
 import DataTable from "@/components/DataTableComponents/DataTable";
 import TableHeader from "../../../../components/dashboard/Tables/TableHeader";
-import { getAllTemplates, getUserTemplates } from "@/actions/templates";
+import { getUserTemplates } from "@/actions/templates";
 import NoProduct from "@/components/dashboard/NoProductDisplay";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/config/auth";
