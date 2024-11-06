@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "extract-source": "node scripts/extract-source-code.js",
+    "dev": "npm run extract-source &&next dev",
+    "build": "npm run extract-source && next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate"

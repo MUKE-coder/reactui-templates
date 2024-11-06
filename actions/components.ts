@@ -5,6 +5,14 @@ import { revalidatePath } from "next/cache";
 
 export async function createSiteComponent(name: string) {
   try {
+    const existing = await db.siteComponents.findFirst({
+      where: {
+        name,
+      },
+    });
+    if (existing) {
+      return existing;
+    }
     const comp = await db.siteComponents.create({
       data: {
         name,
@@ -51,14 +59,14 @@ export async function getComponentViews(id: string) {
     }
   }
 }
-export async function deleteCategory(id: string) {
+export async function deleteComponent(id: string) {
   try {
-    const deletedCategory = await db.category.delete({
+    const deletedCategory = await db.siteComponents.delete({
       where: {
         id,
       },
     });
-    revalidatePath("/dashboard/categories");
+    revalidatePath("/dashboard/site-components");
     return {
       ok: true,
       data: deletedCategory,

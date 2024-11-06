@@ -24,6 +24,7 @@ import { MoreHorizontal, Pencil, Trash } from "lucide-react";
 import { deleteCategory } from "@/actions/categories";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import { deleteComponent } from "@/actions/components";
 
 type ActionColumnProps = {
   row: any;
@@ -43,6 +44,12 @@ export default function ActionColumn({
     try {
       if (model === "category") {
         const res = await deleteCategory(id);
+        if (res?.ok) {
+          // window.location.reload();
+          toast.success(`${model} Deleted Successfully`);
+        }
+      } else if (model === "component") {
+        const res = await deleteComponent(id);
         if (res?.ok) {
           // window.location.reload();
           toast.success(`${model} Deleted Successfully`);

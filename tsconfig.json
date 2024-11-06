@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/(pages)/pages/navbars/mantine-header"
+    "app/(pages)/pages/navbars/mantine-header",
+    "scripts/extract-source-code.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -39,7 +39,7 @@ export const columns: ColumnDef<SiteComponents>[] = [
       return (
         <ActionColumn
           row={row}
-          model="category"
+          model="component"
           editEndpoint={`categories/update/${category.id}`}
           id={category.id}
         />

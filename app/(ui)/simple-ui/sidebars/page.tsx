@@ -1,14 +1,11 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
-import MantineHeader from "@/components/simple-ui/nav-bars/mantine";
-import SimpleHeader from "@/components/simple-ui/nav-bars/mantine-simple";
-import VercelHeader from "@/components/simple-ui/nav-bars/vercel";
 import SidebarV1 from "@/components/simple-ui/sidebars/SidebarV1";
 import SidebarV2 from "@/components/simple-ui/sidebars/SidebarV2";
 import SidebarV3 from "@/components/simple-ui/sidebars/SidebarV3";
 import { extractComponentSource } from "@/lib/getComponentSource";
 
-export default async function Headers() {
+export default async function Sidebars() {
   const s1 = await getComponentViews("672583422c872e16e88955d1");
   const s2 = await getComponentViews("6725835a2c872e16e88955d2");
   const s3 = await getComponentViews("6725a0102c872e16e88955d3");
@@ -18,7 +15,7 @@ export default async function Headers() {
       id: "6725a0102c872e16e88955d3",
       title: "Fixed Modern Sidebar",
       component: SidebarV3,
-      sourcePath: "components/simple-ui/sidebars/SidebarV3.tsx",
+      sourcePath: "sidebars/SidebarV3.tsx",
       downloads: s3,
       githubUrl: "#",
       externalUrl: "/pages/sidebars/modern-sidebar",
@@ -28,7 +25,7 @@ export default async function Headers() {
       title: "Simple Sidebar",
       component: SidebarV1,
       downloads: s1,
-      sourcePath: "components/simple-ui/sidebars/SidebarV1.tsx",
+      sourcePath: "sidebars/SidebarV1.tsx",
       githubUrl: "#",
       externalUrl: "/pages/sidebars/simple-sidebar",
     },
@@ -36,28 +33,29 @@ export default async function Headers() {
       id: "6725835a2c872e16e88955d2",
       title: "Sidebar with Menu",
       component: SidebarV2,
-      sourcePath: "components/simple-ui/sidebars/SidebarV2.tsx",
+      sourcePath: "sidebars/SidebarV2.tsx",
       downloads: s2,
       githubUrl: "#",
       externalUrl: "/pages/sidebars/menu-sidebar",
     },
   ];
+
   return (
     <div className="max-w-7xl mx-auto mt-16 p-8 rounded-lg ">
       <h1 className="text-3xl font-bold mb-6">Sidebars({sidebars.length})</h1>
       <div className="space-y-12">
-        {sidebars.map((header, index) => {
-          const sourceCode = extractComponentSource(header.sourcePath);
+        {sidebars.map((sidebar, index) => {
+          const sourceCode = extractComponentSource(sidebar.sourcePath);
           return (
             <ComponentPreview
               key={index}
-              title={header.title}
-              component={<header.component />}
+              title={sidebar.title}
+              component={<sidebar.component />}
               sourceCode={sourceCode}
-              githubUrl={header.githubUrl}
-              externalUrl={header.externalUrl}
-              id={header.id}
-              downloads={header.downloads}
+              githubUrl={sidebar.githubUrl}
+              externalUrl={sidebar.externalUrl}
+              id={sidebar.id}
+              downloads={sidebar.downloads}
               route="site-headers"
             />
           );

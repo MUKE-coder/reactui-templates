@@ -30,12 +30,18 @@ const categories = [
         icon: MonitorPlay,
         href: "/simple-ui/carousels",
       },
-      // {
-      //   name: "Tabs",
-      //   count: 7,
-      //   icon: LayoutGrid,
-      //   href: "/components/tabs",
-      // },
+      {
+        name: "Pricing Sections",
+        count: 2,
+        icon: LayoutGrid,
+        href: "/simple-ui/pricing",
+      },
+      {
+        name: "Footers",
+        count: 1,
+        icon: LayoutGrid,
+        href: "/simple-ui/footers",
+      },
     ],
   },
 ];
