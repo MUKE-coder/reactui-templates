@@ -1,6 +1,12 @@
 import * as React from "react";
 import Link from "next/link";
-import { Navigation, Sidebar, LayoutGrid, MonitorPlay } from "lucide-react";
+import {
+  Navigation,
+  Sidebar,
+  LayoutGrid,
+  MonitorPlay,
+  UserCheck2,
+} from "lucide-react";
 
 // Example data structure
 const categories = [
@@ -41,6 +47,12 @@ const categories = [
         count: 1,
         icon: LayoutGrid,
         href: "/simple-ui/footers",
+      },
+      {
+        name: "Auth UI",
+        count: 1,
+        icon: UserCheck2,
+        href: "/simple-ui/auth",
       },
     ],
   },
