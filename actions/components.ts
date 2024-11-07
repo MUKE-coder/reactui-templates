@@ -37,7 +37,7 @@ export async function updateSiteComponentViews(id: string, route: string) {
           },
         },
       });
-      // revalidatePath(`/simple-ui/${route}`);
+      revalidatePath(`/simple-ui/${route}`);
       return updated;
     } catch (error) {
       console.log(error);

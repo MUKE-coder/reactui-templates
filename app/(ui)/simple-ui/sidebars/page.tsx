@@ -56,7 +56,7 @@ export default async function Sidebars() {
               externalUrl={sidebar.externalUrl}
               id={sidebar.id}
               downloads={sidebar.downloads}
-              route="site-headers"
+              route="sidebars"
             />
           );
         })}

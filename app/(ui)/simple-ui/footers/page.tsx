@@ -39,7 +39,7 @@ export default async function Headers() {
               externalUrl={header.externalUrl}
               id={header.id}
               downloads={header.downloads}
-              route="site-headers"
+              route="footers"
             />
           );
         })}
