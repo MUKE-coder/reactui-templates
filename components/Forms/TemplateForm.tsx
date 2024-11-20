@@ -444,14 +444,25 @@ export default function About() {
                         type="number"
                       />
                     </div>
-                    <TextInput
-                      register={register}
-                      errors={errors}
-                      label="Template Preview Link"
-                      type="url"
-                      name="previewLink"
-                      placeholder="https://template.verce.app"
-                    />
+                    <div className="grid gap-3 grid-cols-1 md:grid-cols-2">
+                      <TextInput
+                        register={register}
+                        errors={errors}
+                        label="Template Preview Link"
+                        type="url"
+                        name="previewLink"
+                        placeholder="https://template.verce.app"
+                      />
+                      <TextInput
+                        register={register}
+                        errors={errors}
+                        label="Payment Link"
+                        type="url"
+                        name="gumroadLink"
+                        placeholder="https://gumroad-template.com"
+                      />
+                    </div>
+
                     <FormSelectInput
                       label="Category"
                       options={categories.map((item) => {

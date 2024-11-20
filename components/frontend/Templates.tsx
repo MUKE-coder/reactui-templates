@@ -86,6 +86,7 @@ export default function Templates({
                     <img src={item.thumbnail} alt="" />
                     <div className="px-3 pb-3">
                       <h2 className="py-1.5 font-semibold">{item.name}</h2>
+                      <p className="line-clamp-3">{item.description}</p>
                       <div className="flex items-center justify-between">
                         <Badge className="py-1.5 px-4">{price}</Badge>
                         <p>{item.userName}</p>

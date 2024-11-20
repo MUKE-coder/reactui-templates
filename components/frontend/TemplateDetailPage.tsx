@@ -3,13 +3,22 @@
 import * as React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import parse from "html-react-parser";
 import {
   PackageIcon,
   LayersIcon,
   BookOpenIcon,
   HistoryIcon,
+  Handshake,
+  X,
+  Check,
 } from "lucide-react";
 import {
   Carousel,
@@ -97,7 +106,7 @@ export default function TemplateDetailPage({
   // console.log(pathname);
   const router = useRouter();
   async function handleDownload(id: string) {
-    console.log("Download clicked");
+    // console.log("Download clicked");
     if (!session) {
       router.push(`/login?returnUrl=${pathname}`);
       return;
@@ -159,7 +168,7 @@ export default function TemplateDetailPage({
                       target="_blank"
                       href={template.zippedFileUrl ?? "#"}
                     >
-                      Download for Free
+                      Get Access
                       <ChevronRight className="w-4 h-4 ml-3" />
                     </Link>
                   </Button>
@@ -169,7 +178,7 @@ export default function TemplateDetailPage({
                     variant="default"
                     className="bg-gray-900 text-white hover:bg-gray-800"
                   >
-                    Download for Free
+                    Buy Now
                     <ChevronRight className="w-4 h-4 ml-3" />
                   </Button>
                 )}
@@ -240,9 +249,9 @@ export default function TemplateDetailPage({
           </div>
         )}
       </div>
-      <div className="py-6 px-4 md:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="py-6 px-4 md:px-6 lg:px-8 max-w-5xl mx-auto">
         <Tabs defaultValue="included" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 mb-6 rounded-lg bg-muted p-1">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 mb-6 rounded-lg bg-muted p-1">
             <TabsTrigger
               value="included"
               className="rounded-md data-[state=active]:bg-background data-[state=active]:shadow"
@@ -272,6 +281,13 @@ export default function TemplateDetailPage({
             >
               <HistoryIcon className="w-4 h-4 mr-2" />
               <span>Change Log</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="setup"
+              className="rounded-md data-[state=active]:bg-background data-[state=active]:shadow"
+            >
+              <Handshake className="w-4 h-4 mr-2" />
+              <span>Support</span>
             </TabsTrigger>
           </TabsList>
           <div className="mt-4">
@@ -310,6 +326,79 @@ export default function TemplateDetailPage({
                   {/* <h3 className="text-lg font-semibold mb-2">Change Log</h3> */}
                   <div className="prose">
                     {parse(template?.changeLog ?? "")}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="setup">
+              <Card className="w-full max-w-2xl mx-auto">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold">
+                    Website Setup Support
+                  </CardTitle>
+                  <CardDescription>
+                    Breakdown of costs and services for your website
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Cost Breakdown:</h3>
+                    <ul className="list-disc list-inside space-y-1 pl-4">
+                      <li>
+                        Template price:{" "}
+                        <span className="font-medium">As listed on site</span>
+                      </li>
+                      <li>
+                        Domain:{" "}
+                        <span className="font-medium">$20 per year</span>
+                      </li>
+                      <li>
+                        Hosting:{" "}
+                        <span className="font-medium">$80 per year</span>
+                      </li>
+                      <li>
+                        Setup fee:{" "}
+                        <span className="font-medium">Starts at $120</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Setup Includes:</h3>
+                    <ul className="grid gap-1 space-y-1 grid-cols-1  md:grid-cols-2">
+                      {[
+                        "Site Deployment to the Server",
+                        "Domain Integration",
+                        "5 Free emails",
+                        "Analytics setup",
+                        "SEO optimization",
+                        "Email Integration",
+                        "Google My Business setup",
+                        "Google Search Console setup",
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-center space-x-2">
+                          <Check className="h-5 w-5 text-green-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Not Included:</h3>
+                    <ul className="space-y-1">
+                      {[
+                        "Email marketing",
+                        "Blogging functionality",
+                        "Online store setup",
+                        "Other extra functionalities",
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-center space-x-2">
+                          <X className="h-5 w-5 text-red-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>

@@ -106,6 +106,8 @@ model SiteComponents {
   name          String
   slug          String   @unique
   price         Float
+  setupPrice         Float? 
+  gumroadLink        String?
   screenShots   String[]
   description   String?
   thumbnail     String

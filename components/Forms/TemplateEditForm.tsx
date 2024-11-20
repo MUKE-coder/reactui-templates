@@ -69,6 +69,7 @@ export default function TemplateEditForm({
       name: initialData?.name,
       pages: initialData?.pages,
       previewLink: initialData?.previewLink,
+      gumroadLink: "https//:gumroad.com",
       price: initialData?.price,
       description: initialData?.description || "",
     },
@@ -124,8 +125,8 @@ export default function TemplateEditForm({
       data.userId = session?.user.id;
       data.userName = session?.user.firstName;
       data.author = session?.user.email.split("@")[0];
-      // data.price = Number(data.price);
-      data.price = 0;
+      data.price = Number(data.price);
+      // data.price = 0;
       const price = Number(data.price);
       data.isPaid = price === 0 ? false : true;
       if (editingId) {
@@ -188,13 +189,13 @@ export default function TemplateEditForm({
     author: session?.user.email.split("@")[0],
     categoryId: initialData?.categoryId ?? "",
     categoryName: initialData?.categoryName ?? "",
-    // price: initialData?.price ?? 0,
-    price: 0,
+    price: initialData?.price ?? 0,
     screenShots: initialData?.screenShots ?? ["/1.png", "/2.png", "/3.png"],
     description: initialData?.description ?? "",
     thumbnail: initialData?.thumbnail ?? "",
     pages: initialData?.pages ?? 0,
     previewLink: initialData?.previewLink ?? "",
+    gumroadLink: initialData?.gumroadLink ?? "",
     whatsIncluded: initialData?.whatsIncluded ?? "",
     zippedFileUrl: initialData?.zippedFileUrl ?? "",
     zippedFileSize: initialData?.zippedFileSize ?? 0,
@@ -358,14 +359,24 @@ export default function TemplateEditForm({
                             type="number"
                           />
                         </div>
-                        <TextInput
-                          register={register}
-                          errors={errors}
-                          label="Template Preview Link"
-                          type="url"
-                          name="previewLink"
-                          placeholder="https://template.verce.app"
-                        />
+                        <div className="grid gap-3 grid-cols-1 md:grid-cols-2">
+                          <TextInput
+                            register={register}
+                            errors={errors}
+                            label="Template Preview Link"
+                            type="url"
+                            name="previewLink"
+                            placeholder="https://template.verce.app"
+                          />
+                          <TextInput
+                            register={register}
+                            errors={errors}
+                            label="Payment Link"
+                            type="url"
+                            name="gumroadLink"
+                            placeholder="https://gumroad-template.com"
+                          />
+                        </div>
                         <FormSelectInput
                           label="Category"
                           options={categories.map((item) => {

@@ -32,7 +32,7 @@ export default function TemplateHorizontalCard({
             variant="default"
             className="bg-black text-white hover:bg-gray-800"
           >
-            {data.price > 0 ? `Buy now $ ${data.price}` : "Free"}
+            {data.price > 0 ? `Buy now $ ${data.price}` : "Buy Now"}
           </Button>
         </div>
         <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-4">

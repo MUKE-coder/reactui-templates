@@ -27,6 +27,7 @@ export type CreateTemplateProps = {
   author: string;
   categoryId: string;
   categoryName: string;
+  gumroadLink?: string;
   price: number;
   screenShots?: string[];
   description?: string;
