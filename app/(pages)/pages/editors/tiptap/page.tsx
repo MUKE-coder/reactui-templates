@@ -2,7 +2,7 @@
 import VEditor from "@/components/simple-ui/editors/VEditor";
 import React, { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [content, setContent] = useState("<p>Initial content</p>");
 
   return (
