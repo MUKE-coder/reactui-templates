@@ -6,6 +6,7 @@ import {
   LayoutGrid,
   MonitorPlay,
   UserCheck2,
+  EditIcon,
 } from "lucide-react";
 
 // Example data structure
@@ -53,6 +54,12 @@ const categories = [
         count: 1,
         icon: UserCheck2,
         href: "/simple-ui/auth",
+      },
+      {
+        name: "Rich Text Editors",
+        count: 1,
+        icon: EditIcon,
+        href: "/simple-ui/editors",
       },
     ],
   },
