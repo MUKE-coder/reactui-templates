@@ -13,7 +13,7 @@ export default async function Headers() {
 
   const siteHeaders = [
     {
-      id: "672b1a27f49ededfdcdc1d19",
+      id: "672c7af26df412dd93d417a5",
       title: "Register with Carousel",
       component: RegisterV1,
       downloads: h1,
