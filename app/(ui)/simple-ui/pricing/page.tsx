@@ -5,11 +5,13 @@ import SimpleHeader from "@/components/simple-ui/nav-bars/mantine-simple";
 import VercelHeader from "@/components/simple-ui/nav-bars/vercel";
 import PricingV1 from "@/components/simple-ui/pricing/PricingV1";
 import PricingV2 from "@/components/simple-ui/pricing/PricingV2";
+import PricingV3 from "@/components/simple-ui/pricing/PricingV3";
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {
   const h1 = await getComponentViews("672b117ae82799cdcd533cd7");
   const h2 = await getComponentViews("672b19d7f49ededfdcdc1d18");
+  const h3 = await getComponentViews("67aa0497393216fb1898b978");
 
   const siteHeaders = [
     {
@@ -29,6 +31,15 @@ export default async function Headers() {
       sourcePath: "pricing/PricingV2.tsx",
       githubUrl: "#",
       externalUrl: "/pages/pricing/double-tier-pricing",
+    },
+    {
+      id: "67aa0497393216fb1898b978",
+      title: "My New Pricing Component",
+      component: PricingV3,
+      downloads: h3,
+      sourcePath: "pricing/PricingV3.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/pricing/new-pricing",
     },
   ];
   return (

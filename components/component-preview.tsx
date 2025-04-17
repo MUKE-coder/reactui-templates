@@ -77,7 +77,7 @@ export default function ComponentPreview({
         </div>
       </div>
       <Tabs defaultValue="preview" className="w-full">
-        <div className="flex items-center justify-end px-4 py-2 border-b border-border bg-background">
+        <div className="flex items-center justify-end px-4 py-2 border-b border-border bg-background z-[99999]">
           <TabsList className="h-9">
             <TabsTrigger value="preview" className="text-sm">
               Preview
