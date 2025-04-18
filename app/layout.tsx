@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 import dynamic from "next/dynamic";
 import { PHProvider } from "@/components/posthog-provider";
+import AnnouncementBanner from "@/components/Announcement";
 
 const PostHogPageView = dynamic(() => import("@/components/PostHogPageView"), {
   ssr: false,
@@ -40,6 +41,7 @@ export default function RootLayout({
           >
             <Providers>
               <Toaster position="top-center" reverseOrder={false} />
+
               <PostHogPageView />
               {children}
               <Analytics />

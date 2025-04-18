@@ -4,6 +4,7 @@ import { authOptions } from "@/config/auth";
 import { getServerSession } from "next-auth";
 import React, { ReactNode } from "react";
 import DevTools from "../../components/dev-tools";
+import DigitalProducts from "@/components/premium-products";
 
 export default async function HomeLayout({
   children,
@@ -16,7 +17,8 @@ export default async function HomeLayout({
       <SiteHeader session={session} />
       <div className="mt-8">
         {children}
-        <DevTools />
+        <DigitalProducts />
+        {/* <DevTools /> */}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import {
   EditIcon,
 } from "lucide-react";
 import HeroSectionOne from "@/components/simple-ui/hero-sections/HeroSectionOne";
+import AnnouncementBanner from "@/components/Announcement";
 
 // Example data structure
 const categories = [
@@ -280,10 +281,10 @@ const categories = [
         href: "/simple-ui/store-categories",
       },
       {
-        name: "Product Overviews",
-        count: 3,
+        name: "Store Products",
+        count: 5,
         icon: Navigation,
-        href: "/simple-ui/product-overviews",
+        href: "/simple-ui/store-products",
       },
       {
         name: "Product List",
@@ -400,10 +401,20 @@ const categories = [
 ];
 
 export default function SimpleUI() {
+  const releases = [
+    { name: "Category List - 6", url: "/simple-ui/store-categories" },
+    { name: "Product Lists -7", url: "/simple-ui/store-products" },
+    { name: "Product detail 8", url: "/simple-ui/product-details" },
+  ];
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto container py-10">
         <h1 className="text-3xl font-bold mb-8">Component Gallery</h1>
+        <AnnouncementBanner
+          weeklyReleases={releases}
+          weekNumber={16}
+          releaseDate="April 18, 2025"
+        />
         <div className="space-y-12">
           {categories.map((category) => (
             <section key={category.name} className="space-y-4">
