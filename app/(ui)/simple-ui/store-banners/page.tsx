@@ -3,11 +3,6 @@ import ComponentPreview from "@/components/component-preview";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
 
-import NavBarOne from "@/components/simple-ui/store-navigation/NavBarOne";
-import NavBarTwo from "@/components/simple-ui/store-navigation/NavBarTwo";
-import NavBarThree from "@/components/simple-ui/store-navigation/NavBarThree";
-import NavBarFive from "@/components/simple-ui/store-navigation/NavBarFive";
-import NavBarFour from "@/components/simple-ui/store-navigation/NavBarFour";
 import BannerOne from "@/components/simple-ui/store-banners/BannerOne";
 import BannerTwo from "@/components/simple-ui/store-banners/BannerTwo";
 import BannerThree from "@/components/simple-ui/store-banners/BannerThree";
@@ -31,7 +26,7 @@ export default async function Headers() {
       title: "Banner One",
       component: BannerOne,
       downloads: h1,
-      sourcePath: "store-navigation/BannerOne.tsx",
+      sourcePath: "store-banners/BannerOne.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/one",
     },
@@ -40,7 +35,7 @@ export default async function Headers() {
       title: "Banner Two",
       component: BannerTwo,
       downloads: h2,
-      sourcePath: "store-navigation/BannerTwo.tsx",
+      sourcePath: "store-banners/BannerTwo.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/two",
     },
@@ -49,7 +44,7 @@ export default async function Headers() {
       title: "Banner Three",
       component: BannerThree,
       downloads: h3,
-      sourcePath: "store-navigation/BannerThree.tsx",
+      sourcePath: "store-banners/BannerThree.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/three",
     },
@@ -58,7 +53,7 @@ export default async function Headers() {
       title: "Banner Four",
       component: BannerFour,
       downloads: h4,
-      sourcePath: "store-navigation/BannerFour.tsx",
+      sourcePath: "store-banners/BannerFour.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/four",
     },
@@ -67,7 +62,7 @@ export default async function Headers() {
       title: "Banner Five",
       component: BannerFive,
       downloads: h5,
-      sourcePath: "store-navigation/BannerFive.tsx",
+      sourcePath: "store-banners/BannerFive.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/five",
     },
@@ -76,7 +71,7 @@ export default async function Headers() {
       title: "Banner Six",
       component: BannerSix,
       downloads: h6,
-      sourcePath: "store-navigation/BannerSix.tsx",
+      sourcePath: "store-banners/BannerSix.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/six",
     },
@@ -85,7 +80,7 @@ export default async function Headers() {
       title: "Banner Seven",
       component: BannerSeven,
       downloads: h7,
-      sourcePath: "store-navigation/BannerSeven.tsx",
+      sourcePath: "store-banners/BannerSeven.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/seven",
     },
