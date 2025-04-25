@@ -287,10 +287,10 @@ const categories = [
         href: "/simple-ui/store-products",
       },
       {
-        name: "Product List",
-        count: 5,
+        name: "Product Detail Pages",
+        count: 7,
         icon: Sidebar,
-        href: "/simple-ui/product-lists",
+        href: "/simple-ui/product-details",
       },
 
       {
