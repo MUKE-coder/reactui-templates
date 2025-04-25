@@ -21,7 +21,7 @@ export default async function Headers() {
   return (
     <div className="max-w-6xl mx-auto mt-16 p-8 rounded-lg ">
       <h1 className="text-3xl font-bold mb-6">
-        Pricing Sections({dashboardPages.length})
+        Dashboard Pages({dashboardPages.length})
       </h1>
       <div className="space-y-12">
         {dashboardPages.map((header, index) => {
