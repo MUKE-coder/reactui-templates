@@ -154,6 +154,12 @@ const categories = [
     name: "Application UI",
     items: [
       {
+        name: "Dashboard Pages",
+        count: 5,
+        icon: Sidebar,
+        href: "/simple-ui/dashboard-pages",
+      },
+      {
         name: "Sidebars",
         count: 5,
         icon: Sidebar,
