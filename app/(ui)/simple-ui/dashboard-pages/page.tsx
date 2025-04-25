@@ -1,11 +1,13 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
 import DashboardOne from "@/components/simple-ui/dashboard-pages/DashboardOne";
+import DashboardTwo from "@/components/simple-ui/dashboard-pages/DashboardTwo";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {
   const h1 = await getComponentViews("680b7f1c5502a95f7a680f9d");
+  const h2 = await getComponentViews("680b88af2bb5d8addf8677fd");
 
   const dashboardPages = [
     {
@@ -14,6 +16,15 @@ export default async function Headers() {
       component: DashboardOne,
       downloads: h1,
       sourcePath: "dashboard-pages/DashboardOne.tsx",
+      githubUrl: "#",
+      externalUrl: "#",
+    },
+    {
+      id: "680b88af2bb5d8addf8677fd",
+      title: "Product Data Table",
+      component: DashboardTwo,
+      downloads: h2,
+      sourcePath: "dashboard-pages/DashboardTwo.tsx",
       githubUrl: "#",
       externalUrl: "#",
     },
