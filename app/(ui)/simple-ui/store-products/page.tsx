@@ -53,7 +53,7 @@ export default async function Headers() {
       title: "Product Two",
       component: ProductTwo,
       downloads: h2,
-      sourcePath: "store-productsProductTwo.tsx",
+      sourcePath: "store-products/ProductTwo.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/two",
     },
