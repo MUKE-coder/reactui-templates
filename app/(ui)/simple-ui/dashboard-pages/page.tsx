@@ -5,14 +5,14 @@ import DashboardOne from "@/components/simple-ui/dashboard-pages/DashboardOne";
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {
-  const h1 = await getComponentViews("672b117ae82799cdcd533cd7");
+  const h1 = await getComponentViews("680b7f1c5502a95f7a680f9d");
 
   const dashboardPages = [
     {
-      id: "672b117ae82799cdcd533cd7",
+      id: "680b7f1c5502a95f7a680f9d",
       title: "Dashboard Overview",
       component: DashboardOne,
-      downloads: 3,
+      downloads: h1,
       sourcePath: "dashboard-pages/DashboardOne.tsx",
       githubUrl: "#",
       externalUrl: "#",
