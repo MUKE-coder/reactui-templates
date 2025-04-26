@@ -7,6 +7,7 @@ import {
   MonitorPlay,
   UserCheck2,
   EditIcon,
+  Image,
 } from "lucide-react";
 import HeroSectionOne from "@/components/simple-ui/hero-sections/HeroSectionOne";
 import AnnouncementBanner from "@/components/Announcement";
@@ -164,6 +165,12 @@ const categories = [
         count: 5,
         icon: Sidebar,
         href: "/simple-ui/sidebars",
+      },
+      {
+        name: "Image Uploads",
+        count: 1,
+        icon: Image,
+        href: "/simple-ui/image-uploads",
       },
       {
         name: "Page Headings",
