@@ -79,7 +79,7 @@ export default function SiteHeader({ session }: { session: Session | null }) {
           </span>
         </Link>
         <nav>
-          <Link href="/simple-ui">UI Components</Link>
+          <Link href="/simple-ui">Simple UI Components</Link>
         </nav>
         {/* <nav className="hidden lg:flex items-center space-x-4">
           <NavigationMenu>
