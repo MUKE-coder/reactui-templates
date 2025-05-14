@@ -5,12 +5,7 @@ import CarouselCards from "@/components/simple-ui/carousels/carousel-cards";
 import CustomCarousel from "@/components/simple-ui/carousels/custom-carousel";
 import HeroCarousel from "@/components/simple-ui/carousels/hero-carousel";
 import ProductCarousel from "@/components/simple-ui/carousels/product-carousel";
-import MantineHeader from "@/components/simple-ui/nav-bars/mantine";
-import SimpleHeader from "@/components/simple-ui/nav-bars/mantine-simple";
-import VercelHeader from "@/components/simple-ui/nav-bars/vercel";
-import SidebarV1 from "@/components/simple-ui/sidebars/SidebarV1";
-import SidebarV2 from "@/components/simple-ui/sidebars/SidebarV2";
-import SidebarV3 from "@/components/simple-ui/sidebars/SidebarV3";
+
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {

@@ -156,7 +156,7 @@ const categories = [
     items: [
       {
         name: "Dashboard Pages",
-        count: 5,
+        count: 3,
         icon: Sidebar,
         href: "/simple-ui/dashboard-pages",
       },
