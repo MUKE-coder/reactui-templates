@@ -10,6 +10,7 @@ import BannerFour from "@/components/simple-ui/store-banners/BannerFour";
 import BannerFive from "@/components/simple-ui/store-banners/BannerFive";
 import BannerSix from "@/components/simple-ui/store-banners/BannerSix";
 import BannerSeven from "@/components/simple-ui/store-banners/BannerSeven";
+import BannerEight from "@/components/simple-ui/store-banners/BannerEight";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6800db2ee7265731a6816074");
@@ -19,6 +20,7 @@ export default async function Headers() {
   const h5 = await getComponentViews("6800db4ce7265731a6816078");
   const h6 = await getComponentViews("6800db55e7265731a6816079");
   const h7 = await getComponentViews("6800db5ce7265731a681607a");
+  const h8 = await getComponentViews("68350fec0b00025651f6c3db");
 
   const bannerSections = [
     {
@@ -83,6 +85,15 @@ export default async function Headers() {
       sourcePath: "store-banners/BannerSeven.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-banners/seven",
+    },
+    {
+      id: "68350fec0b00025651f6c3db",
+      title: "Banner Eight",
+      component: BannerEight,
+      downloads: h8,
+      sourcePath: "store-banners/BannerEight.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-banners/eight",
     },
   ];
   return (

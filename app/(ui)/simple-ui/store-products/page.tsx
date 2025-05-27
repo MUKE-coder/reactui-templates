@@ -28,6 +28,10 @@ import ProductFour from "@/components/simple-ui/store-products/ProductFour";
 import ProductFive from "@/components/simple-ui/store-products/ProductFive";
 import ProductSix from "@/components/simple-ui/store-products/ProductSix";
 import ProductSeven from "@/components/simple-ui/store-products/ProductSeven";
+import ProductEight from "@/components/simple-ui/store-products/ProductEight";
+import ProductNine from "@/components/simple-ui/store-products/ProductNine";
+import ProductTen from "@/components/simple-ui/store-products/ProductTen";
+import ProductEleven from "@/components/simple-ui/store-products/ProductEleven";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6801c05b5dd74c4d75d5b252");
@@ -37,6 +41,10 @@ export default async function Headers() {
   const h5 = await getComponentViews("6801c0765dd74c4d75d5b256");
   const h6 = await getComponentViews("6801c0805dd74c4d75d5b257");
   const h7 = await getComponentViews("6801c0875dd74c4d75d5b258");
+  const h8 = await getComponentViews("6835152cd2b4848c8496df9f");
+  const h9 = await getComponentViews("6835209b52255da232d06b63");
+  const h10 = await getComponentViews("6835258c23d5ce0a54d877bc");
+  const h11 = await getComponentViews("683525c923d5ce0a54d877bd");
 
   const productSections = [
     {
@@ -101,6 +109,42 @@ export default async function Headers() {
       sourcePath: "store-products/ProductSeven.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/seven",
+    },
+    {
+      id: "6835152cd2b4848c8496df9f",
+      title: "Product Eight",
+      component: ProductEight,
+      downloads: h8,
+      sourcePath: "store-products/ProductEight.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/eight",
+    },
+    {
+      id: "6835209b52255da232d06b63",
+      title: "Product Nine",
+      component: ProductNine,
+      downloads: h9,
+      sourcePath: "store-products/ProductNine.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/nine",
+    },
+    {
+      id: "6835258c23d5ce0a54d877bc",
+      title: "Product Ten",
+      component: ProductTen,
+      downloads: h10,
+      sourcePath: "store-products/ProductTen.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/ten",
+    },
+    {
+      id: "683525c923d5ce0a54d877bd",
+      title: "Product Eleven",
+      component: ProductEleven,
+      downloads: h11,
+      sourcePath: "store-products/ProductEleven.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/eleven",
     },
   ];
   return (
