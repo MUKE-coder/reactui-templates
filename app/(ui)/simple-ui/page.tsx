@@ -8,6 +8,7 @@ import {
   UserCheck2,
   EditIcon,
   Image,
+  FileText,
 } from "lucide-react";
 import HeroSectionOne from "@/components/simple-ui/hero-sections/HeroSectionOne";
 import AnnouncementBanner from "@/components/Announcement";
@@ -209,6 +210,12 @@ const categories = [
         count: 1,
         icon: UserCheck2,
         href: "/simple-ui/auth",
+      },
+      {
+        name: "Forms",
+        count: 4,
+        icon: FileText,
+        href: "/simple-ui/forms",
       },
       {
         name: "Rich Text Editors",
