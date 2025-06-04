@@ -418,6 +418,17 @@ const categories = [
       },
     ],
   },
+  {
+    name: "Complete Pages",
+    items: [
+      {
+        name: "Invoice Pages",
+        count: 5,
+        icon: Sidebar,
+        href: "/simple-ui/complete-pages",
+      },
+    ],
+  },
 ];
 
 export default function SimpleUI() {
