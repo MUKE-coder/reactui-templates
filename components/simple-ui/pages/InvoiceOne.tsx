@@ -298,7 +298,7 @@ const InvoiceOne: React.FC = () => {
   });
 
   const handlePrint = useReactToPrint({
-    content: () => invoiceRef.current,
+    contentRef: invoiceRef,
   });
 
   const handleSendEmail = () => {

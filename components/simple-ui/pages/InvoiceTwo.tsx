@@ -725,7 +725,7 @@ const InvoiceTwo: React.FC = () => {
                     />
                   )}
                 />
-                <div className="flex items-center space-x-2">
+                {/* <div className="flex items-center space-x-2">
                   <Controller
                     name={`items.${index}.taxable`}
                     control={control}
@@ -733,13 +733,13 @@ const InvoiceTwo: React.FC = () => {
                       <input
                         {...field}
                         type="checkbox"
-                        checked={field.value}
+                        checked={!!field.value}
                         className="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"
                       />
                     )}
                   />
                   <span className="text-sm text-gray-600">Taxable</span>
-                </div>
+                </div> */}
                 <button
                   type="button"
                   onClick={() => remove(index)}
