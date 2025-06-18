@@ -13,8 +13,8 @@ export default async function CategoryLayout({
     redirect("/login");
   }
   const role = session.user.role;
-  if (role !== "ADMIN" || role !== "TEAM") {
-    redirect("/dashboard");
-  }
+  // if (role !== "ADMIN" || role !== "TEAM") {
+  //   redirect("/dashboard");
+  // }
   return <div className="">{children}</div>;
 }
