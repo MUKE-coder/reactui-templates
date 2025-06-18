@@ -427,6 +427,12 @@ const categories = [
         icon: Sidebar,
         href: "/simple-ui/complete-pages",
       },
+      {
+        name: "AI Pages",
+        count: 5,
+        icon: Sidebar,
+        href: "/simple-ui/ai-pages",
+      },
     ],
   },
 ];
