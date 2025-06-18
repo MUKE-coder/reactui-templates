@@ -42,13 +42,13 @@ const allLinks = [
     title: "Templates",
     href: "/dashboard/products",
     icon: Package,
-    roles: ["ADMIN", "USER", "CUSTOMER"],
+    roles: ["ADMIN", "TEAM"],
   },
   {
     title: "Customers",
     href: "/dashboard/customers",
     icon: Users,
-    roles: ["ADMIN", "USER", "CUSTOMER"],
+    roles: ["ADMIN", "TEAM"],
   },
   {
     title: "Categories",
