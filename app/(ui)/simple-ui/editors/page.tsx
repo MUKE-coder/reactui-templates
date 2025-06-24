@@ -1,12 +1,15 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
 import { EmailEditor } from "@/components/simple-ui/editors/EmailEditor";
+import ReactEmailEditorV2 from "@/components/simple-ui/editors/ReactEmail";
 import VEditor from "@/components/simple-ui/editors/VEditor";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Editors() {
   const h1 = await getComponentViews("673dbcb61504d1c7793c3bf7");
+  const h2 = await getComponentViews("685ab6b2a0fcdd059f8c9725");
+  const h3 = await getComponentViews("685ab6e0a0fcdd059f8c9726");
 
   const siteHeaders = [
     {
@@ -19,13 +22,22 @@ export default async function Editors() {
       externalUrl: "/pages/editors/tiptap",
     },
     {
-      id: "673dbcb61504d1c7793c3bf7",
+      id: "685ab6b2a0fcdd059f8c9725",
       title: "Better Editor",
       component: EmailEditor,
-      downloads: h1,
+      downloads: h2,
       sourcePath: "editors/EmailEditor.tsx",
       githubUrl: "#",
       externalUrl: "/pages/editors/email",
+    },
+    {
+      id: "685ab6e0a0fcdd059f8c9726",
+      title: "React Email Editor",
+      component: ReactEmailEditorV2,
+      downloads: h3,
+      sourcePath: "editors/ReactEmailEditorV2.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/editors/react-email",
     },
   ];
   return (

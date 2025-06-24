@@ -36,12 +36,14 @@ import FormOne from "@/components/simple-ui/forms/FormOne";
 import FormTwo from "@/components/simple-ui/forms/FormTwo";
 import FormThree from "@/components/simple-ui/forms/FormThree";
 import FormFour from "@/components/simple-ui/forms/FormFour";
+import FreebieCreator from "@/components/simple-ui/forms/FormFive";
 
 export default async function Headers() {
   const h1 = await getComponentViews("683d889503d5cfd772b04d04");
   const h2 = await getComponentViews("683d88d003d5cfd772b04d05");
   const h3 = await getComponentViews("683d890003d5cfd772b04d06");
   const h4 = await getComponentViews("683d892b03d5cfd772b04d07");
+  const h5 = await getComponentViews("685ab447a0fcdd059f8c9724");
 
   const formSections = [
     {
@@ -79,6 +81,15 @@ export default async function Headers() {
       sourcePath: "forms/FormFour.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/four",
+    },
+    {
+      id: "685ab447a0fcdd059f8c9724",
+      title: "FreebieCreator",
+      component: FreebieCreator,
+      downloads: h5,
+      sourcePath: "forms/FreebieCreator.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/five",
     },
   ];
   return (
