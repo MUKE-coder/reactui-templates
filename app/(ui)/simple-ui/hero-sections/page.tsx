@@ -17,6 +17,7 @@ import HeroSectionThirteen from "@/components/simple-ui/hero-sections/HeroSectio
 import { extractComponentSource } from "@/lib/getComponentSource";
 import HeroSectionFourteen from "@/components/simple-ui/hero-sections/HeroSectionFourteen";
 import HeroSectionFifteen from "@/components/simple-ui/hero-sections/HeroSectionFifteen";
+import HeroSectionSixteen from "@/components/simple-ui/hero-sections/HeroSectionSixteen";
 
 export default async function Headers() {
   const h1 = await getComponentViews("67f66561a68d770cd967f92c");
@@ -34,6 +35,7 @@ export default async function Headers() {
   const h13 = await getComponentViews("67f66720a68d770cd967f938");
   const h14 = await getComponentViews("681b4bfc5a2036529800c994");
   const h15 = await getComponentViews("681b4bfc5a2036529800c994");
+  const h16 = await getComponentViews("685a29a1fdfbe61e378383b1");
 
   const heroSections = [
     {
@@ -170,6 +172,15 @@ export default async function Headers() {
       sourcePath: "hero-sections/HeroSectionFifteen.tsx",
       githubUrl: "#",
       externalUrl: "/pages/hero-sections/hero-section-fifteen",
+    },
+    {
+      id: "685a29a1fdfbe61e378383b1",
+      title: "Hero Section Sixteen",
+      component: HeroSectionSixteen,
+      downloads: h16,
+      sourcePath: "hero-sections/HeroSectionSixteen.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/hero-sections/hero-section-sixteen",
     },
   ];
   return (

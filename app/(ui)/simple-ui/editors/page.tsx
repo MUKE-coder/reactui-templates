@@ -1,11 +1,8 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
+import { EmailEditor } from "@/components/simple-ui/editors/EmailEditor";
 import VEditor from "@/components/simple-ui/editors/VEditor";
-import FooterV2 from "@/components/simple-ui/footers/FooterV2";
-import MantineHeader from "@/components/simple-ui/nav-bars/mantine";
-import SimpleHeader from "@/components/simple-ui/nav-bars/mantine-simple";
-import VercelHeader from "@/components/simple-ui/nav-bars/vercel";
-import PricingV1 from "@/components/simple-ui/pricing/PricingV1";
+
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Editors() {
@@ -20,6 +17,15 @@ export default async function Editors() {
       sourcePath: "editors/VEditor.tsx",
       githubUrl: "#",
       externalUrl: "/pages/editors/tiptap",
+    },
+    {
+      id: "673dbcb61504d1c7793c3bf7",
+      title: "Better Editor",
+      component: EmailEditor,
+      downloads: h1,
+      sourcePath: "editors/EmailEditor.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/editors/email",
     },
   ];
   return (

@@ -14,6 +14,7 @@ import HeroSectionThirteen from "@/components/simple-ui/hero-sections/HeroSectio
 import React from "react";
 import HeroSectionFourteen from "@/components/simple-ui/hero-sections/HeroSectionFourteen";
 import HeroSectionFifteen from "@/components/simple-ui/hero-sections/HeroSectionFifteen";
+import HeroSectionSixteen from "@/components/simple-ui/hero-sections/HeroSectionSixteen";
 
 export default function page({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -49,6 +50,8 @@ export default function page({ params }: { params: { slug: string } }) {
     return <HeroSectionFourteen />;
   } else if (key === "fifteen") {
     return <HeroSectionFifteen />;
+  } else if (key === "sixteen") {
+    return <HeroSectionSixteen />;
   }
 
   // Default fallback

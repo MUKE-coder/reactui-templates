@@ -1,17 +1,17 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
-import MantineHeader from "@/components/simple-ui/nav-bars/mantine";
-import SimpleHeader from "@/components/simple-ui/nav-bars/mantine-simple";
-import VercelHeader from "@/components/simple-ui/nav-bars/vercel";
+
 import PricingV1 from "@/components/simple-ui/pricing/PricingV1";
 import PricingV2 from "@/components/simple-ui/pricing/PricingV2";
 import PricingV3 from "@/components/simple-ui/pricing/PricingV3";
+import PricingV4 from "@/components/simple-ui/pricing/PricingV4";
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {
   const h1 = await getComponentViews("672b117ae82799cdcd533cd7");
   const h2 = await getComponentViews("672b19d7f49ededfdcdc1d18");
   const h3 = await getComponentViews("67aa0497393216fb1898b978");
+  const h4 = await getComponentViews("685a29ddfdfbe61e378383b2");
 
   const siteHeaders = [
     {
@@ -21,7 +21,7 @@ export default async function Headers() {
       downloads: h1,
       sourcePath: "pricing/PricingV1.tsx",
       githubUrl: "#",
-      externalUrl: "/pages/pricing/single-tier-pricing",
+      externalUrl: "/pages/pricing/one",
     },
     {
       id: "672b19d7f49ededfdcdc1d18",
@@ -30,7 +30,7 @@ export default async function Headers() {
       downloads: h2,
       sourcePath: "pricing/PricingV2.tsx",
       githubUrl: "#",
-      externalUrl: "/pages/pricing/double-tier-pricing",
+      externalUrl: "/pages/pricing/two",
     },
     {
       id: "67aa0497393216fb1898b978",
@@ -39,7 +39,16 @@ export default async function Headers() {
       downloads: h3,
       sourcePath: "pricing/PricingV3.tsx",
       githubUrl: "#",
-      externalUrl: "/pages/pricing/new-pricing",
+      externalUrl: "/pages/pricing/three",
+    },
+    {
+      id: "685a29ddfdfbe61e378383b2",
+      title: "Pricing V4",
+      component: PricingV4,
+      downloads: h4,
+      sourcePath: "pricing/PricingV4.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/pricing/four",
     },
   ];
   return (
