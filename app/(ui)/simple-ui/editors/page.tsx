@@ -1,7 +1,7 @@
 import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
 import { EmailEditor } from "@/components/simple-ui/editors/EmailEditor";
-import ReactEmailEditorV2 from "@/components/simple-ui/editors/ReactEmail";
+import ReactEmailEditorV2 from "@/components/simple-ui/editors/ReactEmailEditorV2";
 import VEditor from "@/components/simple-ui/editors/VEditor";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
