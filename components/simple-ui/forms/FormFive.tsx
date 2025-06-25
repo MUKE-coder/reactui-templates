@@ -70,7 +70,7 @@ const GRADIENT_COLORS = [
   },
 ];
 
-export default function FreebieCreator() {
+export default function FormFive() {
   const [showPreview, setShowPreview] = useState(false);
 
   const {
