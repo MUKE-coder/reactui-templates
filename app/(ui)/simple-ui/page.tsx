@@ -435,6 +435,17 @@ const categories = [
       },
     ],
   },
+  {
+    name: "Projects",
+    items: [
+      {
+        name: "Momo Market",
+        count: 5,
+        icon: Sidebar,
+        href: "/simple-ui/momo-market",
+      },
+    ],
+  },
 ];
 
 export default function SimpleUI() {
