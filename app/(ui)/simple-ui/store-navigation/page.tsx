@@ -8,6 +8,7 @@ import NavBarTwo from "@/components/simple-ui/store-navigation/NavBarTwo";
 import NavBarThree from "@/components/simple-ui/store-navigation/NavBarThree";
 import NavBarFive from "@/components/simple-ui/store-navigation/NavBarFive";
 import NavBarFour from "@/components/simple-ui/store-navigation/NavBarFour";
+import NavBarSix from "@/components/simple-ui/store-navigation/NavBarSix";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6800a797e7265731a681606f");
@@ -15,6 +16,7 @@ export default async function Headers() {
   const h3 = await getComponentViews("6800a7e5e7265731a6816071");
   const h4 = await getComponentViews("6800a7f9e7265731a6816072");
   const h5 = await getComponentViews("6800a7ffe7265731a6816073");
+  const h6 = await getComponentViews("6875e364d3d3f5ddae350781");
 
   const navSections = [
     {
@@ -46,7 +48,7 @@ export default async function Headers() {
     },
     {
       id: "6800a7f9e7265731a6816072",
-      title: "Navbar Four",
+      title: "Navbar Four - Mega Menu",
       component: NavBarFour,
       downloads: h4,
       sourcePath: "store-navigation/NavBarFour.tsx",
@@ -61,6 +63,15 @@ export default async function Headers() {
       sourcePath: "store-navigation/NavBarFive.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-navigation/five",
+    },
+    {
+      id: "6875e364d3d3f5ddae350781",
+      title: "Navbar Six - No mega Menu with Tabs",
+      component: NavBarSix,
+      downloads: h6,
+      sourcePath: "store-navigation/NavBarSix.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-navigation/six",
     },
   ];
   return (

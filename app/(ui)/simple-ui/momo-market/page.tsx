@@ -6,11 +6,6 @@ import MomoFooter from "@/components/simple-ui/momo-market/MomoFooter";
 import MomoNavbar from "@/components/simple-ui/momo-market/MomoNavbar";
 import MomoProductDetail from "@/components/simple-ui/momo-market/MomoProductDetail";
 import MomoProductListing from "@/components/simple-ui/momo-market/MomoProductListing";
-import FreebieLanding from "@/components/simple-ui/pages/FreebieLanding";
-import InvoiceFour from "@/components/simple-ui/pages/InvoiceFour";
-import InvoiceOne from "@/components/simple-ui/pages/InvoiceOne";
-import InvoiceThree from "@/components/simple-ui/pages/InvoiceThree";
-import InvoiceTwo from "@/components/simple-ui/pages/InvoiceTwo";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
 
@@ -28,7 +23,7 @@ export default async function Headers() {
       title: "Momo Navbar",
       component: MomoNavbar,
       downloads: h1,
-      sourcePath: "pages/MomoNavbar.tsx",
+      sourcePath: "momo-market/MomoNavbar.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/one",
     },
@@ -37,7 +32,7 @@ export default async function Headers() {
       title: "Momo Banner",
       component: MomoBannerCarousel,
       downloads: h2,
-      sourcePath: "pages/MomoBannerCarousel.tsx",
+      sourcePath: "momo-market/MomoBannerCarousel.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/two",
     },
@@ -46,7 +41,7 @@ export default async function Headers() {
       title: "Momo Product Listing",
       component: MomoProductListing,
       downloads: h3,
-      sourcePath: "pages/MomoProductListing.tsx",
+      sourcePath: "momo-market/MomoProductListing.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/three",
     },
@@ -55,7 +50,7 @@ export default async function Headers() {
       title: "Momo Footer",
       component: MomoFooter,
       downloads: h4,
-      sourcePath: "pages/MomoFooter.tsx",
+      sourcePath: "momo-market/MomoFooter.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/four",
     },
@@ -64,7 +59,7 @@ export default async function Headers() {
       title: "Momo Product detail",
       component: MomoProductDetail,
       downloads: h5,
-      sourcePath: "pages/MomoProductDetail.tsx",
+      sourcePath: "momo-market/MomoProductDetail.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/five",
     },
@@ -73,7 +68,7 @@ export default async function Headers() {
       title: "Momo Cart Page",
       component: MomoCartItems,
       downloads: h6,
-      sourcePath: "pages/MomoCartItems.tsx",
+      sourcePath: "momo-market/MomoCartItems.tsx",
       githubUrl: "#",
       externalUrl: "/pages/momo-market/six",
     },
