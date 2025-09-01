@@ -2,6 +2,7 @@ import { getComponentViews } from "@/actions/components";
 import ComponentPreview from "@/components/component-preview";
 import { EmailEditor } from "@/components/simple-ui/editors/EmailEditor";
 import ReactEmailEditorV2 from "@/components/simple-ui/editors/ReactEmailEditorV2";
+import SimpleEditor from "@/components/simple-ui/editors/SimpleEditor";
 import VEditor from "@/components/simple-ui/editors/VEditor";
 
 import { extractComponentSource } from "@/lib/getComponentSource";
@@ -10,6 +11,7 @@ export default async function Editors() {
   const h1 = await getComponentViews("673dbcb61504d1c7793c3bf7");
   const h2 = await getComponentViews("685ab6b2a0fcdd059f8c9725");
   const h3 = await getComponentViews("685ab6e0a0fcdd059f8c9726");
+  const h4 = await getComponentViews("68b4ffe83151ff00475614d5");
 
   const siteHeaders = [
     {
@@ -29,6 +31,15 @@ export default async function Editors() {
       sourcePath: "editors/EmailEditor.tsx",
       githubUrl: "#",
       externalUrl: "/pages/editors/email",
+    },
+    {
+      id: "68b4ffe83151ff00475614d5",
+      title: "Simple Editor",
+      component: SimpleEditor,
+      downloads: h4,
+      sourcePath: "editors/SimpleEditor.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/editors/simple",
     },
     {
       id: "685ab6e0a0fcdd059f8c9726",
