@@ -32,6 +32,7 @@ import ProductEight from "@/components/simple-ui/store-products/ProductEight";
 import ProductNine from "@/components/simple-ui/store-products/ProductNine";
 import ProductTen from "@/components/simple-ui/store-products/ProductTen";
 import ProductEleven from "@/components/simple-ui/store-products/ProductEleven";
+import ProductTwelve from "@/components/simple-ui/store-products/ProductTwelve";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6801c05b5dd74c4d75d5b252");
@@ -45,6 +46,7 @@ export default async function Headers() {
   const h9 = await getComponentViews("6835209b52255da232d06b63");
   const h10 = await getComponentViews("6835258c23d5ce0a54d877bc");
   const h11 = await getComponentViews("683525c923d5ce0a54d877bd");
+  const h12 = await getComponentViews("68d11863269738a23d8ae358");
 
   const productSections = [
     {
@@ -145,6 +147,15 @@ export default async function Headers() {
       sourcePath: "store-products/ProductEleven.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/eleven",
+    },
+    {
+      id: "68d11863269738a23d8ae358",
+      title: "Product Twelve",
+      component: ProductTwelve,
+      downloads: h12,
+      sourcePath: "store-products/ProductTwelve.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/twelve",
     },
   ];
   return (

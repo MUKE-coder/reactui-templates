@@ -21,6 +21,7 @@ import CategoryFour from "@/components/simple-ui/store-categories/CategoryFour";
 import CategoryFive from "@/components/simple-ui/store-categories/CategoryFive";
 import CategorySix from "@/components/simple-ui/store-categories/CategorySix";
 import CategoryThree from "@/components/simple-ui/store-categories/CategoryThree";
+import CategoryEight from "@/components/simple-ui/store-categories/CategoryEight";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6800fdc04f4da26adc64faf1");
@@ -29,6 +30,7 @@ export default async function Headers() {
   const h4 = await getComponentViews("6800fdda4f4da26adc64faf4");
   const h5 = await getComponentViews("6800fde04f4da26adc64faf5");
   const h6 = await getComponentViews("6800fdee4f4da26adc64faf6");
+  const h8 = await getComponentViews("68d11d4c269738a23d8ae35a");
 
   const bannerSections = [
     {
@@ -84,6 +86,15 @@ export default async function Headers() {
       sourcePath: "store-categories/CategorySix.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-categories/six",
+    },
+    {
+      id: "68d11d4c269738a23d8ae35a",
+      title: "Category Eight",
+      component: CategoryEight,
+      downloads: h8,
+      sourcePath: "store-categories/CategoryEight.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-categories/eight",
     },
   ];
   return (

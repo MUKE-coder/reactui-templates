@@ -11,6 +11,7 @@ import ProductDetailFive from "@/components/simple-ui/product-details/ProductDet
 import ProductDetailSix from "@/components/simple-ui/product-details/ProductDetailSix";
 import ProductDetailSeven from "@/components/simple-ui/product-details/ProductDetailSeven";
 import ProductDetailEight from "@/components/simple-ui/product-details/ProductDetailEight";
+import ProductDetailsNine from "@/components/simple-ui/product-details/ProductDetailsNine";
 
 export default async function Headers() {
   const h1 = await getComponentViews("6801ee231cc2d5e3f74118e2");
@@ -21,6 +22,7 @@ export default async function Headers() {
   const h6 = await getComponentViews("6801ee681cc2d5e3f74118e7");
   const h7 = await getComponentViews("6801ee741cc2d5e3f74118e8");
   const h8 = await getComponentViews("6801ee821cc2d5e3f74118e9");
+  const h9 = await getComponentViews("68d11c18269738a23d8ae359");
 
   const productSections = [
     {
@@ -94,6 +96,15 @@ export default async function Headers() {
       sourcePath: "product-details/ProductDetailEight.tsx",
       githubUrl: "#",
       externalUrl: "/pages/product-details/eight",
+    },
+    {
+      id: "68d11c18269738a23d8ae359",
+      title: "Product Detail Nine",
+      component: ProductDetailsNine,
+      downloads: h9,
+      sourcePath: "product-details/ProductDetailsNine.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/product-details/nine",
     },
   ];
   return (
