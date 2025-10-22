@@ -4,6 +4,7 @@ import DashboardFour from "@/components/simple-ui/dashboard-pages/DashboardFour"
 import DashboardOne from "@/components/simple-ui/dashboard-pages/DashboardOne";
 import DashboardThree from "@/components/simple-ui/dashboard-pages/DashboardThree";
 import DashboardTwo from "@/components/simple-ui/dashboard-pages/DashboardTwo";
+import ContactApp from "@/components/simple-ui/pages/ContactApp";
 import FreebieLanding from "@/components/simple-ui/pages/FreebieLanding";
 import InvoiceFour from "@/components/simple-ui/pages/InvoiceFour";
 import InvoiceOne from "@/components/simple-ui/pages/InvoiceOne";
@@ -13,6 +14,7 @@ import InvoiceTwo from "@/components/simple-ui/pages/InvoiceTwo";
 import { extractComponentSource } from "@/lib/getComponentSource";
 
 export default async function Headers() {
+  const h0 = await getComponentViews("68f882caae84de9986abaec4");
   const h1 = await getComponentViews("683fd40bcade4c058668ca42");
   const h2 = await getComponentViews("683fd43ecade4c058668ca43");
   const h3 = await getComponentViews("683fd468cade4c058668ca44");
@@ -20,6 +22,15 @@ export default async function Headers() {
   const h5 = await getComponentViews("685ab41ca0fcdd059f8c9723");
 
   const dashboardPages = [
+    {
+      id: "68f882caae84de9986abaec4",
+      title: "Contact App",
+      component: ContactApp,
+      downloads: h0,
+      sourcePath: "pages/ContactApp.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/complete-pages/zero",
+    },
     {
       id: "683fd40bcade4c058668ca42",
       title: "Invoice One",

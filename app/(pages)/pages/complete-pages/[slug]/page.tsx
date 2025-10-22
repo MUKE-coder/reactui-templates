@@ -7,6 +7,7 @@ import InvoiceOne from "@/components/simple-ui/pages/InvoiceOne";
 import InvoiceTwo from "@/components/simple-ui/pages/InvoiceTwo";
 import InvoiceThree from "@/components/simple-ui/pages/InvoiceThree";
 import InvoiceFour from "@/components/simple-ui/pages/InvoiceFour";
+import ContactApp from "@/components/simple-ui/pages/ContactApp";
 
 export default function page({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -20,6 +21,8 @@ export default function page({ params }: { params: { slug: string } }) {
     return <InvoiceThree />;
   } else if (slug === "four") {
     return <InvoiceFour />;
+  } else if (slug === "zero") {
+    return <ContactApp />;
   }
 
   // Default fallback
