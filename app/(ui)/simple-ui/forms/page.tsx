@@ -37,6 +37,8 @@ import FormTwo from "@/components/simple-ui/forms/FormTwo";
 import FormThree from "@/components/simple-ui/forms/FormThree";
 import FormFour from "@/components/simple-ui/forms/FormFour";
 import FormFive from "@/components/simple-ui/forms/FormFive";
+import { ProductForm } from "@/components/simple-ui/forms/ProductForm";
+import { CategoryForm } from "@/components/simple-ui/forms/CategoryForm";
 
 export default async function Headers() {
   const h1 = await getComponentViews("683d889503d5cfd772b04d04");
@@ -44,6 +46,8 @@ export default async function Headers() {
   const h3 = await getComponentViews("683d890003d5cfd772b04d06");
   const h4 = await getComponentViews("683d892b03d5cfd772b04d07");
   const h5 = await getComponentViews("685ab447a0fcdd059f8c9724");
+  const h6 = await getComponentViews("69042c28023e74c4b625a20f");
+  const h7 = await getComponentViews("69042fd8023e74c4b625a210");
 
   const formSections = [
     {
@@ -90,6 +94,24 @@ export default async function Headers() {
       sourcePath: "forms/FormFive.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/five",
+    },
+    {
+      id: "69042c28023e74c4b625a20f",
+      title: "Product Form with Variants",
+      component: ProductForm,
+      downloads: h6,
+      sourcePath: "forms/ProductForm.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/product",
+    },
+    {
+      id: "69042fd8023e74c4b625a210",
+      title: "Category Form",
+      component: CategoryForm,
+      downloads: h7,
+      sourcePath: "forms/CategoryForm.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/category",
     },
   ];
   return (
