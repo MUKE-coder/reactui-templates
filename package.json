@@ -39,6 +39,7 @@
     "@react-email/components": "0.1.0",
     "@react-email/render": "1.1.2",
     "@react-pdf/renderer": "^4.3.0",
+    "@tanstack/react-form": "^1.27.5",
     "@tanstack/react-table": "^8.19.3",
     "@tiptap/extension-heading": "^2.11.7",
     "@tiptap/extension-image": "^2.10.0",

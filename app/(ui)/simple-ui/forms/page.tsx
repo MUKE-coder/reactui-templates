@@ -39,6 +39,7 @@ import FormFour from "@/components/simple-ui/forms/FormFour";
 import FormFive from "@/components/simple-ui/forms/FormFive";
 import { ProductForm } from "@/components/simple-ui/forms/ProductForm";
 import { CategoryForm } from "@/components/simple-ui/forms/CategoryForm";
+import { TanstackProductForm } from "@/components/simple-ui/forms/TanstackProductForm";
 
 export default async function Headers() {
   const h1 = await getComponentViews("683d889503d5cfd772b04d04");
@@ -48,6 +49,7 @@ export default async function Headers() {
   const h5 = await getComponentViews("685ab447a0fcdd059f8c9724");
   const h6 = await getComponentViews("69042c28023e74c4b625a20f");
   const h7 = await getComponentViews("69042fd8023e74c4b625a210");
+  const h8 = await getComponentViews("694636697ffe013d5c60d3de");
 
   const formSections = [
     {
@@ -112,6 +114,15 @@ export default async function Headers() {
       sourcePath: "forms/CategoryForm.tsx",
       githubUrl: "#",
       externalUrl: "/pages/store-products/category",
+    },
+    {
+      id: "69042fd8023e74c4b625a210",
+      title: "Tanstack form - Product Form ",
+      component: TanstackProductForm,
+      downloads: h8,
+      sourcePath: "forms/TanstackProductForm.tsx",
+      githubUrl: "#",
+      externalUrl: "/pages/store-products/tanstackform",
     },
   ];
   return (
