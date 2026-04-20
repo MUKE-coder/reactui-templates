@@ -9,22 +9,22 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Account {
-  id                String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId            String  @db.ObjectId
+  id                String  @id @default(cuid())
+  userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.String
-  access_token      String? @db.String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.String
+  id_token          String? @db.Text
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -33,9 +33,9 @@ model Account {
 }
 
 model Session {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       String   @db.ObjectId
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
@@ -48,7 +48,7 @@ enum UserRole {
 }
 
 model User {
-  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  id            String     @id @default(cuid())
   name          String
   firstName     String
   lastName      String
@@ -72,7 +72,7 @@ model User {
 }
 
 model Category {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  id          String     @id @default(cuid())
   title       String
   slug        String     @unique
   imageUrl    String?
@@ -84,7 +84,7 @@ model Category {
 }
 
 model Customer {
-  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  id         String    @id @default(cuid())
   name       String
   email      String
   productIds String[]
@@ -94,7 +94,7 @@ model Customer {
 }
 
 model SiteComponents {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  id        String    @id @default(cuid())
   name      String
   downloads Int       @default(0)
   createdAt DateTime  @default(now())
@@ -102,7 +102,7 @@ model SiteComponents {
 }
 
 model Template {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  id             String   @id @default(cuid())
   name           String
   slug           String   @unique
   price          Float
@@ -129,10 +129,10 @@ model Template {
   isPaid         Boolean  @default(true)
   status         Boolean  @default(false)
   // Relations
-  categoryId     String   @db.ObjectId
+  categoryId     String
   category       Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
-  userId String @db.ObjectId
+  userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime  @default(now())
