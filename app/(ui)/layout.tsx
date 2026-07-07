@@ -15,9 +15,9 @@ export default async function HomeLayout({
   return (
     <div className="bg-background">
       <SiteHeader session={session} />
-      <div className="mt-8">
+      <div className="pt-16">
         {children}
-        <DigitalProducts />
+        {/* <DigitalProducts /> */}
         {/* <DevTools /> */}
       </div>
     </div>

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "c1",
+    "sellerId": "s1",
+    "sellerName": "Jenny Doe",
+    "sellerAvatar": "https://picsum.photos/seed/s1/100/100",
+    "isOnline": true,
+    "lastMessage": "Hi, I'm interested in your product",
+    "lastMessageTime": "2023-09-23T14:30:00Z",
+    "unreadCount": 2,
+    "messages": [
+      { "id": "m1", "senderId": "u1", "text": "Hi, I'm interested in your product", "timestamp": "2023-09-23T14:30:00Z", "type": "text" },
+      { "id": "m2", "senderId": "s1", "text": "Hello! Which product are you interested in?", "timestamp": "2023-09-23T14:31:00Z", "type": "text" },
+      { "id": "m3", "senderId": "u1", "text": "The Nike Pegasus 39", "timestamp": "2023-09-23T14:32:00Z", "type": "text" },
+      { "id": "m4", "senderId": "s1", "text": "Great choice! It's one of our bestsellers. Would you like to know about the available sizes?", "timestamp": "2023-09-23T14:33:00Z", "type": "text" },
+      { "id": "m5", "senderId": "u1", "image": "https://picsum.photos/seed/msg1/300/200", "timestamp": "2023-09-23T14:34:00Z", "type": "image" },
+      { "id": "m6", "senderId": "s1", "duration": 13, "timestamp": "2023-09-23T14:35:00Z", "type": "voice" }
+    ]
+  },
+  {
+    "id": "c2",
+    "sellerId": "s2",
+    "sellerName": "Alex Morgan",
+    "sellerAvatar": "https://picsum.photos/seed/s2/100/100",
+    "isOnline": false,
+    "lastMessage": "Thank you for your order!",
+    "lastMessageTime": "2023-09-22T10:15:00Z",
+    "unreadCount": 0,
+    "messages": [
+      { "id": "m7", "senderId": "s2", "text": "Thank you for your order!", "timestamp": "2023-09-22T10:15:00Z", "type": "text" },
+      { "id": "m8", "senderId": "u1", "text": "When will it be shipped?", "timestamp": "2023-09-22T10:20:00Z", "type": "text" },
+      { "id": "m9", "senderId": "s2", "text": "It will be shipped tomorrow morning.", "timestamp": "2023-09-22T10:25:00Z", "type": "text" }
+    ]
+  },
+  {
+    "id": "c3",
+    "sellerId": "s3",
+    "sellerName": "Sarah Wilson",
+    "sellerAvatar": "https://picsum.photos/seed/s3/100/100",
+    "isOnline": true,
+    "lastMessage": "The sofa is available in blue too",
+    "lastMessageTime": "2023-09-21T16:45:00Z",
+    "unreadCount": 1,
+    "messages": [
+      { "id": "m10", "senderId": "u1", "text": "Do you have the sofa in blue?", "timestamp": "2023-09-21T16:40:00Z", "type": "text" },
+      { "id": "m11", "senderId": "s3", "text": "The sofa is available in blue too", "timestamp": "2023-09-21T16:45:00Z", "type": "text" }
+    ]
+  },
+  {
+    "id": "c4",
+    "sellerId": "s4",
+    "sellerName": "Tech Store",
+    "sellerAvatar": "https://picsum.photos/seed/s4/100/100",
+    "isOnline": false,
+    "lastMessage": "Your warranty is covered for 2 years",
+    "lastMessageTime": "2023-09-20T09:00:00Z",
+    "unreadCount": 0,
+    "messages": [
+      { "id": "m12", "senderId": "u1", "text": "What's the warranty on the Galaxy S24?", "timestamp": "2023-09-20T08:55:00Z", "type": "text" },
+      { "id": "m13", "senderId": "s4", "text": "Your warranty is covered for 2 years", "timestamp": "2023-09-20T09:00:00Z", "type": "text" }
+    ]
+  },
+  {
+    "id": "c5",
+    "sellerId": "s8",
+    "sellerName": "Sheila Lemke",
+    "sellerAvatar": "https://picsum.photos/seed/s8/100/100",
+    "isOnline": true,
+    "lastMessage": "Sure, I'll check the stock for you",
+    "lastMessageTime": "2023-09-19T11:30:00Z",
+    "unreadCount": 0,
+    "messages": [
+      { "id": "m14", "senderId": "u1", "text": "Is the floral dress still available in M?", "timestamp": "2023-09-19T11:25:00Z", "type": "text" },
+      { "id": "m15", "senderId": "s8", "text": "Sure, I'll check the stock for you", "timestamp": "2023-09-19T11:30:00Z", "type": "text" }
+    ]
+  }
+]

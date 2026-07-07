@@ -1,0 +1,22 @@
+[
+  { "id": "clothes", "name": "Clothes", "icon": "shirt-outline" },
+  { "id": "electronics", "name": "Electronics", "icon": "phone-portrait-outline" },
+  { "id": "shoes", "name": "Shoes", "icon": "footsteps-outline" },
+  { "id": "watch", "name": "Watch", "icon": "watch-outline" },
+  { "id": "bags", "name": "Bags", "icon": "bag-handle-outline" },
+  { "id": "furniture", "name": "Furniture", "icon": "bed-outline" },
+  { "id": "toys", "name": "Toys", "icon": "game-controller-outline" },
+  { "id": "kitchen", "name": "Kitchen", "icon": "restaurant-outline" },
+  { "id": "glasses", "name": "Glasses", "icon": "glasses-outline" },
+  { "id": "jewelry", "name": "Jewelry", "icon": "diamond-outline" },
+  { "id": "laptops", "name": "Laptops", "icon": "laptop-outline" },
+  { "id": "mobile", "name": "Mobile", "icon": "phone-portrait-outline" },
+  { "id": "camera", "name": "Camera", "icon": "camera-outline" },
+  { "id": "pet-food", "name": "Pet Food", "icon": "paw-outline" },
+  { "id": "skin-care", "name": "Skin Care", "icon": "flower-outline" },
+  { "id": "fitness", "name": "Fitness", "icon": "fitness-outline" },
+  { "id": "security", "name": "Security", "icon": "shield-checkmark-outline" },
+  { "id": "hardware", "name": "Hardware", "icon": "hammer-outline" },
+  { "id": "gifts", "name": "Gifts", "icon": "gift-outline" },
+  { "id": "other", "name": "Other", "icon": "grid-outline" }
+]

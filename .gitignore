@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*
+
+# expo-preview sandbox (build artifacts + isolated deps)
+/expo-preview/node_modules
+/expo-preview/dist
+/public/expo-preview
+
+# expo-preview QA scripts (playwright smoke/screenshot)
+/expo-preview/*.cjs

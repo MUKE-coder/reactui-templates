@@ -44,6 +44,37 @@ export async function updateSiteComponentViews(id: string, route: string) {
     }
   }
 }
+export async function incrementComponentByName(name: string) {
+  if (!name) return;
+  try {
+    const existing = await db.siteComponents.findFirst({ where: { name } });
+    if (existing) {
+      return await db.siteComponents.update({
+        where: { id: existing.id },
+        data: { downloads: { increment: 1 } },
+      });
+    }
+    // Seed row missing — create it so the counter still works.
+    return await db.siteComponents.create({ data: { name, downloads: 1 } });
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function getComponentCountsByPrefix(prefix: string) {
+  try {
+    const rows = await db.siteComponents.findMany({
+      where: { name: { startsWith: prefix } },
+      select: { name: true, downloads: true },
+    });
+    return rows.reduce<Record<string, number>>((acc, r) => {
+      acc[r.name] = r.downloads;
+      return acc;
+    }, {});
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
+}
 export async function getComponentViews(id: string) {
   if (id) {
     try {

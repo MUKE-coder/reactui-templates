@@ -1,0 +1,43 @@
+[
+  {
+    "id": "cp1",
+    "code": "WELCOME200",
+    "condition": "Add items worth $2 more to unlock",
+    "benefit": "Get 50% OFF",
+    "minAmount": 200,
+    "discountPercent": 50,
+    "maxDiscount": 100,
+    "expiresAt": "2024-12-31T23:59:59Z"
+  },
+  {
+    "id": "cp2",
+    "code": "FLASH30",
+    "condition": "Valid on all flash sale items",
+    "benefit": "Get 30% OFF",
+    "minAmount": 100,
+    "discountPercent": 30,
+    "maxDiscount": 75,
+    "expiresAt": "2024-10-31T23:59:59Z"
+  },
+  {
+    "id": "cp3",
+    "code": "FREESHIP",
+    "condition": "Orders above $50",
+    "benefit": "Free Shipping",
+    "minAmount": 50,
+    "discountPercent": 0,
+    "maxDiscount": 0,
+    "freeShipping": true,
+    "expiresAt": "2024-11-30T23:59:59Z"
+  },
+  {
+    "id": "cp4",
+    "code": "WEEKEND20",
+    "condition": "Valid on weekends only",
+    "benefit": "Get 20% OFF",
+    "minAmount": 75,
+    "discountPercent": 20,
+    "maxDiscount": 50,
+    "expiresAt": "2024-12-31T23:59:59Z"
+  }
+]

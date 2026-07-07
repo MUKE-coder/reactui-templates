@@ -1,7 +1,12 @@
 "use client";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import React from "react";
 import LoaderAnimation from "../public/loader.json";
+
+// lottie-react pulls in lottie-web which references `document` at import, so it
+// must not be evaluated during SSR.
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 export default function Loading() {
   return (
     <div>

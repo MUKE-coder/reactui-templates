@@ -29,5 +29,5 @@
     "app/(pages)/pages/navbars/mantine-header",
     "scripts/extract-source-code.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "expo-preview"]
 }

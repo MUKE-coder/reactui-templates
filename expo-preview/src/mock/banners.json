@@ -1,0 +1,29 @@
+[
+  {
+    "id": "b1",
+    "title": "30% OFF",
+    "subtitle": "Today's Special!",
+    "description": "Get discount for every order. Only valid for today!",
+    "image": "https://picsum.photos/seed/banner1/600/300",
+    "badge": "Limited time!",
+    "ctaText": "Claim"
+  },
+  {
+    "id": "b2",
+    "title": "25% OFF",
+    "subtitle": "Weekend Deal",
+    "description": "Special weekend promotion on all electronics!",
+    "image": "https://picsum.photos/seed/banner2/600/300",
+    "badge": "2 days left",
+    "ctaText": "Claim"
+  },
+  {
+    "id": "b3",
+    "title": "50% OFF",
+    "subtitle": "Flash Sale",
+    "description": "Mega flash sale on fashion items. Don't miss out!",
+    "image": "https://picsum.photos/seed/banner3/600/300",
+    "badge": "Limited time!",
+    "ctaText": "Claim"
+  }
+]

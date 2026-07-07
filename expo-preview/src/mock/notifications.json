@@ -1,0 +1,62 @@
+[
+  {
+    "id": "n1",
+    "type": "order",
+    "title": "Order Shipped",
+    "body": "Your order #TRK452126542 has been shipped and is on its way!",
+    "icon": "cube-outline",
+    "time": "1h",
+    "read": false,
+    "date": "today"
+  },
+  {
+    "id": "n2",
+    "type": "sale",
+    "title": "Flash Sale Alert!",
+    "body": "Don't miss out! Up to 50% off on electronics. Limited time only.",
+    "icon": "flash-outline",
+    "time": "2h",
+    "read": false,
+    "date": "today"
+  },
+  {
+    "id": "n3",
+    "type": "review",
+    "title": "Product Review Request",
+    "body": "How was your Modern Sofa Chair? Share your experience!",
+    "icon": "star-outline",
+    "time": "5h",
+    "read": true,
+    "date": "today"
+  },
+  {
+    "id": "n4",
+    "type": "payment",
+    "title": "Payment Successful",
+    "body": "Your payment of $349.00 for Sony WH-1000XM5 was successful.",
+    "icon": "card-outline",
+    "time": "1d",
+    "read": true,
+    "date": "yesterday"
+  },
+  {
+    "id": "n5",
+    "type": "order",
+    "title": "Order Delivered",
+    "body": "Your order #TRK452126540 has been delivered successfully.",
+    "icon": "checkmark-circle-outline",
+    "time": "1d",
+    "read": true,
+    "date": "yesterday"
+  },
+  {
+    "id": "n6",
+    "type": "sale",
+    "title": "Weekend Special",
+    "body": "Exclusive weekend deals on shoes. Use code WEEKEND20 for extra savings!",
+    "icon": "pricetag-outline",
+    "time": "2d",
+    "read": true,
+    "date": "yesterday"
+  }
+]

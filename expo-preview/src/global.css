@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #ffffff;
+}
+/* Make #root a flex container so the RN tree's flex-1 fills the full height
+   (otherwise full-screen gradients/backgrounds collapse to content height). */
+#root {
+  display: flex;
+  flex-direction: column;
+}
+#root > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Onest as the app font across all rendered RN text (icons are SVG, unaffected). */
+#root,
+#root div,
+#root span,
+#root p,
+#root a,
+#root input,
+#root textarea,
+#root button {
+  font-family: "Onest", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif !important;
+}
+
+/* Kill the browser's black focus outline on TextInputs. */
+#root input:focus,
+#root textarea:focus,
+#root [contenteditable]:focus,
+#root div:focus,
+#root :focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

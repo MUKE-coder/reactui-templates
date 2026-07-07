@@ -9,6 +9,7 @@ import {
   EditIcon,
   Image,
   FileText,
+  ArrowRight,
 } from "lucide-react";
 import HeroSectionOne from "@/components/simple-ui/hero-sections/HeroSectionOne";
 import AnnouncementBanner from "@/components/Announcement";
@@ -455,41 +456,47 @@ export default function SimpleUI() {
     { name: "Product detail 8", url: "/simple-ui/product-details" },
   ];
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-6xl mx-auto container py-10">
-        <h1 className="text-3xl font-bold mb-8">Component Gallery</h1>
-        <AnnouncementBanner
-          weeklyReleases={releases}
-          weekNumber={16}
-          releaseDate="April 18, 2025"
-        />
-        <div className="space-y-12">
+    <div className="min-h-screen">
+      <div className="container mx-auto max-w-6xl px-4 py-12">
+        <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-muted-foreground">
+          <LayoutGrid className="h-3.5 w-3.5" /> React · Tailwind · shadcn/ui
+        </span>
+        <h1 className="mt-5 text-4xl font-semibold tracking-tight">Simple UI</h1>
+        <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+          Copy-paste web components and sections built with React, TypeScript,
+          Tailwind CSS and shadcn/ui.
+        </p>
+
+        <div className="mt-12 space-y-12">
           {categories.map((category) => (
-            <section key={category.name} className="space-y-4">
-              <div className="flex items-center gap-2">
-                <h2 className="text-2xl font-semibold">{category.name}</h2>
-                <span className="text-sm text-muted-foreground">
-                  {category.items.length} components
+            <section key={category.name}>
+              <div className="mb-4 flex items-baseline gap-2">
+                <h2 className="text-lg font-semibold tracking-tight">
+                  {category.name}
+                </h2>
+                <span className="text-xs tabular-nums text-muted-foreground">
+                  {category.items.length}
                 </span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {category.items.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="group relative overflow-hidden rounded-lg border bg-card transition-colors "
+                    className="group flex items-center gap-3 rounded-xl border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
                   >
-                    <div className="aspect-[16/9] overflow-hidden bg-muted flex items-center justify-center">
-                      <item.icon className="w-12 h-12 text-primary transition-transform group-hover:scale-105" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border bg-background text-foreground">
+                      <item.icon className="h-[18px] w-[18px]" />
                     </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-medium">{item.name}</h3>
-                        <span className="text-sm text-muted-foreground">
-                          {item.count} variants
-                        </span>
-                      </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="truncate text-sm font-medium">
+                        {item.name}
+                      </h3>
+                      <span className="text-xs text-muted-foreground">
+                        {item.count} variants
+                      </span>
                     </div>
+                    <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/40 transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
                   </Link>
                 ))}
               </div>

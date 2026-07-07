@@ -70,16 +70,36 @@ const menuItems = [
 
 export default function SiteHeader({ session }: { session: Session | null }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 dark:bg-black dark:text-white bg-white text-slate-700">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold flex flex-col">
-          <span>React UI</span>
-          <span className="text-muted-foreground -mt-1 text-xs tracking-widest">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 text-foreground">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="text-lg font-semibold tracking-tight">React UI</span>
+          <span className="text-muted-foreground -mt-0.5 text-[10px] tracking-[0.2em] uppercase">
             Templates
           </span>
         </Link>
-        <nav>
-          <Link href="/simple-ui">Simple UI Components</Link>
+        <nav className="hidden md:flex items-center gap-1 text-sm">
+          <Link
+            href="/"
+            className="rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            Templates
+          </Link>
+          <Link
+            href="/simple-ui"
+            className="rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            Simple UI
+          </Link>
+          <Link
+            href="/expo-ui"
+            className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            Expo UI
+            <span className="rounded-full border px-1.5 py-0.5 text-[10px] font-medium leading-none text-foreground">
+              New
+            </span>
+          </Link>
         </nav>
         {/* <nav className="hidden lg:flex items-center space-x-4">
           <NavigationMenu>

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "u1",
+    "name": "Esther Howard",
+    "email": "esther@example.com",
+    "phone": "+1 (555) 123-4567",
+    "gender": "Female",
+    "avatar": "https://picsum.photos/seed/u1/200/200",
+    "location": "New York, USA",
+    "walletBalance": 12000.00
+  }
+]
