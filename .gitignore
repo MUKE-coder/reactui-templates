@@ -36,10 +36,12 @@ yarn-error.log*
 next-env.d.ts
 .env*
 
-# expo-preview sandbox (build artifacts + isolated deps)
+# expo-preview sandbox (isolated deps + intermediate build dir)
 /expo-preview/node_modules
 /expo-preview/dist
-/public/expo-preview
+# NOTE: /public/expo-preview (the built sandbox) is committed on purpose so
+# Vercel serves it statically without building the sandbox during deploy.
+# Rebuild + commit it whenever expo-preview/src changes: npm run expo-preview:build
 
 # expo-preview QA scripts (playwright smoke/screenshot)
 /expo-preview/*.cjs

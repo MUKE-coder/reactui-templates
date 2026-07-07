@@ -2,16 +2,12 @@
 import React from "react";
 import { View } from "react-native";
 import * as Io5 from "react-icons/io5";
-import * as Md from "react-icons/md";
-import * as Fi from "react-icons/fi";
-import * as Fa from "react-icons/fa";
-import * as Ai from "react-icons/ai";
 
 // Web shim for @expo/vector-icons. The extracted Expo components keep their real
-// `import { Ionicons } from "@expo/vector-icons"`; a webpack alias points that
+// `import { Ionicons } from "@expo/vector-icons"`; a vite alias points that
 // import here so we render react-icons (whose io5 set mirrors Ionicons v5)
-// instead of pulling in expo-font (which uses node:async_hooks and breaks the
-// webpack build). The real package stays installed for TypeScript types only.
+// instead of pulling in expo-font (which breaks the web build). Only Ionicons is
+// used across the components, so we import just that set to keep the bundle lean.
 
 type IconProps = {
   name: string;
@@ -39,28 +35,26 @@ function makeFamily(
       pack[`${prefix}${pascal}Outline`] ||
       pack[`${prefix}Outline${pascal}`];
     if (!Cmp) {
-      // Unknown glyph — render a neutral square so layout is preserved.
       return (
-        <View
-          style={[{ width: size, height: size, borderRadius: 3 }, style]}
-        />
+        <View style={[{ width: size, height: size, borderRadius: 3 }, style]} />
       );
     }
     return <Cmp size={size} color={color} style={style} />;
   };
-  // glyphMap exists so `keyof typeof Ionicons.glyphMap` typing has a runtime peer.
   (Family as any).glyphMap = {};
   return Family;
 }
 
 export const Ionicons = makeFamily(Io5 as any, "Io");
-export const MaterialIcons = makeFamily(Md as any, "Md");
-export const MaterialCommunityIcons = makeFamily(Md as any, "Md");
-export const Feather = makeFamily(Fi as any, "Fi");
-export const FontAwesome = makeFamily(Fa as any, "Fa");
-export const FontAwesome5 = makeFamily(Fa as any, "Fa");
-export const AntDesign = makeFamily(Ai as any, "Ai");
-export const Entypo = makeFamily(Md as any, "Md");
+// No component uses these other families; alias them to Ionicons so imports
+// still resolve without pulling extra react-icons sets into the bundle.
+export const MaterialIcons = Ionicons;
+export const MaterialCommunityIcons = Ionicons;
+export const Feather = Ionicons;
+export const FontAwesome = Ionicons;
+export const FontAwesome5 = Ionicons;
+export const AntDesign = Ionicons;
+export const Entypo = Ionicons;
 
 export default {
   Ionicons,

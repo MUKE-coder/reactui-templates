@@ -7,7 +7,7 @@
     "expo-preview:install": "cd expo-preview && npm install --legacy-peer-deps",
     "expo-preview:build": "cd expo-preview && npm run build",
     "dev": "npm run extract-source &&next dev",
-    "build": "npm run extract-source && npm run expo-preview:build && next build",
+    "build": "npm run extract-source && next build",
     "start": "next start",
     "seed": "node scripts/seed-db.js",
     "lint": "next lint",
