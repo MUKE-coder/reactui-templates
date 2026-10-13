@@ -1,6 +1,9 @@
 {
   "name": "nextjs-starter-kit",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "private": true,
   "scripts": {
     "extract-source": "node scripts/extract-source-code.js && node scripts/extract-expo-source-code.js",
