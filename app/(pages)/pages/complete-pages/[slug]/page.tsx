@@ -9,7 +9,8 @@ import InvoiceThree from "@/components/simple-ui/pages/InvoiceThree";
 import InvoiceFour from "@/components/simple-ui/pages/InvoiceFour";
 import ContactApp from "@/components/simple-ui/pages/ContactApp";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

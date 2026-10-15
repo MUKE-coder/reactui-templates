@@ -4,11 +4,17 @@ import AuthorTemplates from "@/components/frontend/AuthorTemplates";
 import { notFound } from "next/navigation";
 import React from "react";
 
-export default async function page({
-  params: { username },
-}: {
-  params: { username: string };
-}) {
+export default async function page(
+  props: {
+    params: Promise<{ username: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    username
+  } = params;
+
   const templates = (await getAuthorTemplatesByUsername(username)) || [];
   const author = await getUserByUsername(username);
   if (!author) {

@@ -8,7 +8,8 @@ import BannerFive from "@/components/simple-ui/store-banners/BannerFive";
 import BannerSix from "@/components/simple-ui/store-banners/BannerSix";
 import BannerSeven from "@/components/simple-ui/store-banners/BannerSeven";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

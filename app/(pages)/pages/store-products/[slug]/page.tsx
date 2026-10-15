@@ -7,7 +7,8 @@ import ProductFive from "@/components/simple-ui/store-products/ProductFive";
 import ProductSix from "@/components/simple-ui/store-products/ProductSix";
 import ProductSeven from "@/components/simple-ui/store-products/ProductSeven";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

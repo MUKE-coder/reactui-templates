@@ -7,7 +7,8 @@ import PricingV4 from "@/components/simple-ui/pricing/PricingV4";
 import PricingV3 from "@/components/simple-ui/pricing/PricingV3";
 import PricingV2 from "@/components/simple-ui/pricing/PricingV2";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

@@ -66,7 +66,9 @@ const InvoiceTwo: React.FC = () => {
     companyPhone2: "0756384580",
     companyEmail: "info@desishub.com",
     companyLogo: "",
-    invoiceNumber: generateInvoiceNumber(),
+    // Filled in after mount: a random value here would differ between the
+    // server render and hydration.
+    invoiceNumber: "",
     date: new Date().toISOString().split("T")[0],
     dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
       .toISOString()
@@ -145,6 +147,11 @@ const InvoiceTwo: React.FC = () => {
       reader.readAsDataURL(file);
     }
   };
+
+  useEffect(() => {
+    setValue("invoiceNumber", generateInvoiceNumber());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const regenerateInvoiceNumber = () => {
     setValue("invoiceNumber", generateInvoiceNumber());

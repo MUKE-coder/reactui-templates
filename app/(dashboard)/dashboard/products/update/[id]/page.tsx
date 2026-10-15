@@ -8,11 +8,17 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import React from "react";
 
-export default async function page({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default async function page(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   const template = await getCaTemplateById(id);
   const categories = (await getAllCategories()) || [];
   const session = await getServerSession(authOptions);

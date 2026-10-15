@@ -2,6 +2,7 @@
 // ProductDetail.tsx
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   MessageCircle,
   MinusIcon,
@@ -115,9 +116,9 @@ const ProductDetailSeven = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white">
       {/* Breadcrumb */}
       <nav className="flex items-center text-sm text-gray-500 mb-6">
-        <a href="/" className="hover:text-emerald-600">
+        <Link href="/" className="hover:text-emerald-600">
           Home
-        </a>
+        </Link>
         <span className="mx-2">/</span>
         <a href="/mens-fashion" className="hover:text-emerald-600">
           Men's Fashion

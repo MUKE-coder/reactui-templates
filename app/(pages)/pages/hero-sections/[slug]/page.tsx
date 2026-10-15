@@ -16,7 +16,8 @@ import HeroSectionFourteen from "@/components/simple-ui/hero-sections/HeroSectio
 import HeroSectionFifteen from "@/components/simple-ui/hero-sections/HeroSectionFifteen";
 import HeroSectionSixteen from "@/components/simple-ui/hero-sections/HeroSectionSixteen";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   const key = slug.split("-")[2];
 

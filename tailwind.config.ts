@@ -3,9 +3,8 @@ const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
-import { withUt } from "uploadthing/tw";
 
-export default withUt({
+export default {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -120,7 +119,7 @@ export default withUt({
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
   ],
-});
+};
 
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));

@@ -7,13 +7,18 @@ import { getCategoryTemplatesBySlug } from "@/actions/templates";
 import { notFound } from "next/navigation";
 import TemplateComingSoon from "@/components/TemplateCommingSoon";
 
-export default async function page({
-  params: { slug },
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function page(
+  props: {
+    params: Promise<{ slug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const category = await getCategoryTemplatesBySlug(slug);
   if (!category) {
     return notFound();

@@ -1,11 +1,12 @@
 import { getFrontendTemplates } from "@/actions/templates";
 import CleanHero from "@/components/frontend/CleanHero";
 import Templates from "@/components/frontend/Templates";
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function Home(
+  props: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const { query = "all" } = searchParams;
   const templates = (await getFrontendTemplates(query as string)) || [];
   return (

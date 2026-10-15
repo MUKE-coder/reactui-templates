@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -10,7 +14,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -18,8 +22,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": [
+        "./*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -27,7 +34,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/(pages)/pages/navbars/mantine-header",
-    "scripts/extract-source-code.js"
+    "scripts/extract-source-code.js",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "expo-preview"]
+  "exclude": [
+    "node_modules",
+    "expo-preview"
+  ]
 }

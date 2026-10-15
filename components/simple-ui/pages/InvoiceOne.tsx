@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
 import {
-  PDFDownloadLink,
   Document,
   Page,
   Text,
@@ -10,6 +9,7 @@ import {
   Font,
   Image,
 } from "@react-pdf/renderer";
+import PDFDownloadLink from "./PDFDownloadLink";
 import { useReactToPrint } from "react-to-print";
 
 // Register font (you would need to load your actual font files)

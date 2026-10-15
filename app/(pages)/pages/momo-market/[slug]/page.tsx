@@ -13,7 +13,8 @@ import MomoProductDetail from "@/components/simple-ui/momo-market/MomoProductDet
 import MomoFooter from "@/components/simple-ui/momo-market/MomoFooter";
 import MomoCartItems from "@/components/simple-ui/momo-market/MomoCartItems";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

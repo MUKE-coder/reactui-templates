@@ -99,6 +99,7 @@ export default function VEditor({
   const [imageUrl, setImageUrl] = useState("");
 
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit,
       Image,

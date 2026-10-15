@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useReactToPrint } from "react-to-print";
 import {
-  PDFDownloadLink,
   Document,
   Page,
   Text,
@@ -10,6 +9,7 @@ import {
   StyleSheet,
   Font,
 } from "@react-pdf/renderer";
+import PDFDownloadLink from "./PDFDownloadLink";
 
 // Define interfaces (assuming they are defined as before)
 interface InvoiceItem {

@@ -37,7 +37,7 @@ export interface EmailData {
 }
 
 // Custom React Email Components
-export const NewsletterTemplate = ({ emailData }: { emailData: EmailData }) => {
+const NewsletterTemplate = ({ emailData }: { emailData: EmailData }) => {
   const { meta, components } = emailData;
 
   // Helper function to extract YouTube video ID from URL

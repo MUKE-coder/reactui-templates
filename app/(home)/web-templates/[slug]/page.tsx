@@ -8,11 +8,17 @@ import { authOptions } from "@/config/auth";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 
-export default async function Page({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const template = await getTemplateBySlug(slug);
   // Templates from the Author
   const authorId = template?.userId ?? "";

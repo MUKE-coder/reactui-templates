@@ -23,6 +23,7 @@ interface EditorProps {
 
 const SimpleEditor = ({ value, onChange }: EditorProps) => {
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit,
       Link.configure({

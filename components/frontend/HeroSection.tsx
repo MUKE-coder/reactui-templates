@@ -1,7 +1,6 @@
 import React from "react";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Category } from "@prisma/client";
 export type CategoryProps = {

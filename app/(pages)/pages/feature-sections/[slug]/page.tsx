@@ -9,7 +9,8 @@ import FeatureSectionSeven from "@/components/simple-ui/feature-sections/Feature
 import FeatureSectionEight from "@/components/simple-ui/feature-sections/FeatureEight";
 import FeatureSectionNine from "@/components/simple-ui/feature-sections/FeatureNine";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 

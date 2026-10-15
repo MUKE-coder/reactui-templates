@@ -14,7 +14,8 @@ import CategoryFour from "@/components/simple-ui/store-categories/CategoryFour";
 import CategoryFive from "@/components/simple-ui/store-categories/CategoryFive";
 import CategorySix from "@/components/simple-ui/store-categories/CategorySix";
 
-export default function page({ params }: { params: { slug: string } }) {
+export default async function page(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug;
   // const key = slug.split("-")[2];
 
